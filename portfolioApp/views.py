@@ -4,6 +4,7 @@ from portfolioApp.forms import contactForm
 from django.shortcuts import redirect
 from django.core.mail import send_mail
 from django.conf import settings
+from django.http import HttpResponseServerError
 
 # Create your views here.
 
@@ -15,10 +16,22 @@ def about(request):
     context = {}
     return render(request, 'portfolioApp/about.html', context)
 
+#def myProjects(request):
+    #allProjects = Projects.objects.prefetch_related('technologies').all()
+    #dict = {'projects': allProjects}
+    #return render(request, 'portfolioApp/portfolio.html', dict) 
+
+import logging
+
+logger = logging.getLogger(__name__)
+
 def myProjects(request):
-    allProjects = Projects.objects.prefetch_related('technologies').all()
-    dict = {'projects': allProjects}
-    return render(request, 'portfolioApp/portfolio.html', dict)    
+    try:
+        projects = Projects.objects.prefetch_related('technologies').all()
+        return render(request, 'portfolioApp/portfolio.html', {"projects": projects})
+    except Exception as e:
+        logger.exception("Error loading projects page")
+        return HttpResponseServerError("Internal Server Error")
 
 def contact(request):
     if request.method == 'POST':
