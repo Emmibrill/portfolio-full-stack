@@ -26,10 +26,10 @@
                 <div class="tool__con">
                     <!--<h2 class="tool__title">tools used</h2>-->
                     <div class="tools"> 
-                        {% if Project.Technology %}
-                        {% for tech in Project.Technology.all %}
+                        {% if Project.technologies %}
+                        {% for tech in Project.technologies.all %}
 
-                        <div class="eachTool">{{tech.technology}}</div>
+                        <div class="eachTool">{{tech.technologies}}</div>
 
                         {% endfor %}
                         {% endif %}
