@@ -1,0 +1,62 @@
+{% extends 'portfolioApp/base.html' %}
+
+
+{% block contents %}
+    
+<section id="portfolio__section">
+    <div class="portfolio__section">
+        {% if projects %}   
+        <h3 class="port__intro">My portfolio</h3>
+        {% else %}
+        <h3 class="port__intro"></h3>
+        {% endif %}
+        <div class="portfolio__con">
+            {% if projects %}
+            {% for project in projects %}
+            <div class="portfolio">
+                <div class="port-image__con">
+                    <img class="port__image" src="{{project.image.url}}" alt="{{project.title}}">
+                </div>
+                <h3 class="portfolio__name">{{project.title}}</h3>
+                <article class="portfolio__des">
+                    <p class="port__par">
+                        {{project.description}}
+                    </p>
+                </article>
+                <div class="tool__con">
+                    <!--<h2 class="tool__title">tools used</h2>-->
+                    <div class="tools"> 
+                        {% if project.technologies %}
+                        {% for tech in project.technologies.all %}
+
+                        <div class="eachTool">{{tech.technology}}</div>
+
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="btn__con">
+                    <button class="btn__view"><a href="{{project.link}}"><i class="fa-solid fa-bullseye"></i>Go live</a></button>
+                </div>
+                
+            </div>
+            {% endfor %}
+            {% else %}
+            <!--<div class="no_project_display">No project to display</div>-->
+            <div class="project-dialogue-box">
+                <div class="dialogue-box">
+                    <h1 class="opps">oops!</h1>
+                    <h3 class="sorry">currently working on some projects.</h3>
+                    <i class="fa-solid fa-face-smile"></i>
+                    <a class="dialogue-box-btn" href="{% url 'contact' %}">Contact me</a>
+                </div>
+            </div>
+             
+            {% endif %}
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

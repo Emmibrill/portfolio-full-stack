@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmmibrillUdo</title>
+    <link rel="shortcut icon" href="{% static 'images/emmibrill.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+    
+</head>
+<body>
+    <header>
+        <div class="nav__tab-con">
+            <div class="nav__tab">
+                <div class="logo__con">
+                    <div class="logo">
+                        <img class="logo__img" src="{% static 'images/emmibrill.png' %}" alt="emmibrill_name_logo">
+                    </div>
+                </div>
+
+                <div class="hambugger" aria-controls="closed">
+                    <span class="dash one"></span>
+                    <span class="dash two"></span>
+                    <span class="dash three"></span>
+                </div>
+
+                <div class="nav__list-con">
+                    <div class="nav__list">
+                        <ul class="lists">
+                            <li class="list"><a class="list__tab" href="{% url 'home' %}">home</a></li>
+                            <li class="list"><a class="list__tab" href="#">my services</a></li>
+                            <li class="list"><a class="list__tab" href="#">tools</a></li>
+                            <li class="list"><a class="list__tab" href="{% url 'projects' %}">portfolio</a></li>
+                            <li class="list"><a class="list__tab" href="#">about</a></li>
+                            <li class="list"><a class="list__tab" href="{% url 'contact' %}">contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+
+        {% block contents %}
+
+        {% endblock %}
+         
+        
+    </section>
+    
+    
+    <script src="{% static 'js/portfolio.js' %}"></script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

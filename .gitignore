@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Virtual environments
+*.venv/
+venv/
+env/
+ENV/
+.Python
+
+# Pipenv files
+Pipfile.lock
+
+# Django migrations
+**/migrations/
+
+# VSCode settings
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Secrets
+.env
+
+# Logs
+*.log

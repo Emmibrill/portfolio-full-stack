@@ -1,0 +1,76 @@
+{% extends 'portfolioApp/base.html' %}
+{% load static %}
+ 
+{% block contents %}
+<section class="form-section">
+
+    <form action="{% url 'contact' %}" method="post" class="contact__form" id="contact" autocomplete="on" novalidate>
+        {% csrf_token %}
+
+        <div class="contact__header">
+            <h2 class="contact__title">Contact Me</h2>
+        </div>
+
+        <div class="contact__head">
+            
+            {% if form.name.errors %}
+                {% for error in form.name.errors %}
+                    <span class="errorMessage" data-server-error="true">{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                <span class="errorMessage" data-server-error="false"></span>
+            {% endif %}
+            
+            <input type="text" class="input" name="name" id="name" value="{{form.name.value|default:''}}" required>
+            <label class="label" for="name">Name</label>
+            <span class="contact__label">Name</span>
+            <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i>
+        </div>
+
+        <div class="contact__head">
+            {% if form.emailAddress.errors %}
+                {% for error in form.emailAddress.errors %}
+                    <span class="errorMessage" data-server-error="true">{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                <span class="errorMessage" data-server-error="false"></span>      
+            {% endif %}
+            <input type="email" class="input" name="emailAddress" id="email" value="{{form.emailAddress.value|default:''}}" required>
+            <label class="label" for="email">Email</label>
+            <span class="contact__label">Email</span>
+            <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i>
+        </div>
+
+
+        <div class="contact__head">
+
+            <textarea class="input" name="message" id="message">{{form.message.value}}</textarea>
+            <label class="label" for="message">Message</label>
+            <span class="contact__label">Message</span>
+            {% if form.message.errors %}
+                {% for error in form.message.errors %}
+                    <span class="errorMessage--message" data-server-error="true">{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                <span class="errorMessage--message" data-server-error="false"></span>
+            {% endif %}
+
+        </div>
+
+        <button  class="submitform">submit</button>
+
+    </form>
+</section>
+    
+
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+    import { attachFormValidator } from "{% static 'js/validateForm.js' %}";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        attachFormValidator('#contact', '.input');
+    });
+</script>
+{% endblock %}
