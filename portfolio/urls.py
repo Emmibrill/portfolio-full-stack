@@ -21,6 +21,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('portfolioApp.urls')),  # Include URLs from portfolioApp
-    path('', include('portfolioAPI.urls')),  # Include URLs from portfolioAPI
+    #path('api/', include('portfolioAPI.urls')),  # Include URLs from portfolioAPI
 
 ]
