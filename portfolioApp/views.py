@@ -17,7 +17,7 @@ def about(request):
 
 def myProjects(request):
     allProjects = Projects.objects.prefetch_related('technologies').all()
-    dict = {'Projects': allProjects}
+    dict = {'projects': allProjects}
     return render(request, 'portfolioApp/portfolio.html', dict)    
 
 def contact(request):

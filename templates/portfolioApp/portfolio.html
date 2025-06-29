@@ -5,14 +5,14 @@
     
 <section id="portfolio__section">
     <div class="portfolio__section">
-        {% if Projects %}   
+        {% if projects %}   
         <h3 class="port__intro">My portfolio</h3>
         {% else %}
         <h3 class="port__intro"></h3>
         {% endif %}
         <div class="portfolio__con">
-            {% if Projects %}
-            {% for project in Projects %}
+            {% if projects %}
+            {% for project in projects %}
             <div class="portfolio">
                 <div class="port-image__con">
                     <img class="port__image" src="{{project.image.url}}" alt="{{project.title}}">
