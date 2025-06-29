@@ -5,14 +5,14 @@
     
 <section id="portfolio__section">
     <div class="portfolio__section">
-        {% if projects %}   
+        {% if Projects %}   
         <h3 class="port__intro">My portfolio</h3>
         {% else %}
         <h3 class="port__intro"></h3>
         {% endif %}
         <div class="portfolio__con">
-            {% if projects %}
-            {% for project in projects %}
+            {% if Projects %}
+            {% for project in Projects %}
             <div class="portfolio">
                 <div class="port-image__con">
                     <img class="port__image" src="{{project.image.url}}" alt="{{project.title}}">
@@ -26,8 +26,8 @@
                 <div class="tool__con">
                     <!--<h2 class="tool__title">tools used</h2>-->
                     <div class="tools"> 
-                        {% if project.technologies %}
-                        {% for tech in project.technologies.all %}
+                        {% if Project.Technology %}
+                        {% for tech in Project.Technology.all %}
 
                         <div class="eachTool">{{tech.technology}}</div>
 

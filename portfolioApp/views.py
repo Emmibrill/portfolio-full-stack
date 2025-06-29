@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from portfolioApp.models import projects
+from portfolioApp.models import Projects
 from portfolioApp.forms import contactForm
 from django.shortcuts import redirect
 from django.core.mail import send_mail
@@ -16,8 +16,8 @@ def about(request):
     return render(request, 'portfolioApp/about.html', context)
 
 def myProjects(request):
-    allProjects = projects.objects.prefetch_related('technologies').all()
-    dict = {'projects': allProjects}
+    allProjects = Projects.objects.prefetch_related('technologies').all()
+    dict = {'Projects': allProjects}
     return render(request, 'portfolioApp/portfolio.html', dict)    
 
 def contact(request):
