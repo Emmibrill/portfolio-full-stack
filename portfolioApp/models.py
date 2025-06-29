@@ -7,13 +7,13 @@ class Projects(models.Model):
     description = models.TextField(blank=False, null=False)
     image = models.ImageField(upload_to='projects/', blank=False, null=False)
     technologies = models.ManyToManyField('Technology', blank=False)
-    link = models.URLField(blank=False, null=False)
+    link = models.URLField(blank=False, null=False, default="https://example.com")
 
     def __str__(self):
         return self.title
 
 class Technology(models.Model):
-    technology = models.CharField(max_length=100, unique=True)
+    technology = models.CharField(max_length=100, unique=True, default='unknown')
 
     def __str__(self):
         return self.technology
