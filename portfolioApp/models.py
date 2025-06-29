@@ -13,7 +13,7 @@ class Projects(models.Model):
         return self.title
 
 class Technology(models.Model):
-    technologies = models.CharField(max_length=100, unique=True)
+    technology = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return self.technology
