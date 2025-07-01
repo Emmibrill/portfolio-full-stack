@@ -13,8 +13,6 @@ ENV/
 # Pipenv files
 Pipfile.lock
 
-# Django migrations
-**/migrations/
 
 # VSCode settings
 .vscode/
