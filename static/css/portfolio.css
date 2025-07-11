@@ -19,6 +19,7 @@
 }
 
 *:root{
+    --html-bdy-bg: rgb(13, 27, 42);
     --bg-color-nav: rgb(13, 27, 42);
     --mobile-nav-bg: rgb(31, 42, 60);
     --mobile-nav-text-color: rgb(234, 234, 234);
@@ -34,15 +35,31 @@
     --dialogue-box-btn-text-color: rgb(13, 27, 42);
     --dialogue-box-btn-hover-bg: rgb(255, 181, 102);
     --dialogue-box-btn-hover-text-color: rgb(13, 27, 42);
+    --form-heading-color: rgb(234, 234, 234);
+    --form-section-bg: rgb(13, 27, 42);
+    --contact-form-bg: rgb(31, 42, 60);
+    --form-input-bdr-color: rgb(31, 42, 60);
+    --form-input-bg-color: rgba(255, 255, 255, 0.05);
+    --form-input-txt-color: rgb(234, 234, 234);
+    --input-focus-bdr-color: rgb(102, 240, 244);
+    --input-focus-outline-color: rgba(102, 240, 244, 0.5);
+    --input-focus-box-shadow: rgba(102, 240, 244, 0.2);
+    --contact-frm-label-color: rgb(234, 234, 234);
+    --contact-frm-label-bg: rgba(31, 42, 60, 0.95);
     --box-shadow: 0 0.3rem 0.8rem rgba(226, 228, 231, 0.6);
-    --outline-color-focus: gray;
-    --textBox-focus: red;
+    --contact-submit-btn-bg: rgb(0, 183, 194);
+    --contact-submit-btn-bdr-color: rgb(0, 183, 194);
+    --contact-submit-btn-text-color: rgb(234, 234, 234);
+    --contact-submit-btn-hover-bg: rgb(255, 181, 102);
+    --contact-submit-btn-hover-text-color: rgb(13, 27, 42);
+    --contact-submit-btn-hover-bdr-color: rgb(255, 181, 102);
+
 }
 
 html, body{
     width: 100%;
     height: 100%;
-    background: rgb(13, 27, 42);
+    background: var(--html-bdy-bg);
 }
 .nav__tab{
     position: fixed;
@@ -303,7 +320,7 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(234, 234, 234);
+    color: var(--form-heading-color);
     font-family: 'Comfortaa', cursive;
     padding: 1rem 0 2.5rem;
     font-weight: 600;
@@ -319,7 +336,7 @@ html, body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgb(13, 27, 42);
+    background: var(--form-section-bg);
     padding: 6rem 0 2rem;
     font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
 }
@@ -327,9 +344,8 @@ html, body{
     width: 80%;
     max-width: 50rem;
     border-radius: 1rem;
-    border: 1px solid var(--nav-active2);
-    background: rgb(31, 42, 60);
-    border: 1px solid var(--nav-active2);
+    background: var(--contact-form-bg);
+    border: none;
     font-family: 'Comfortaa', cursive;
     display:block;
     padding: 1rem;
@@ -388,11 +404,11 @@ html, body{
     width: 100%;
     font-size: .9rem;
     height: 2rem;
-    border: 1.5px solid rgb(31, 42, 60);
+    border: 1.5px solid var(--form-input-bdr-color);
     outline: none;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--form-input-bg-color);
     padding: 1.4rem .9rem 1.5rem;
-    color: rgb(234, 234, 234);
+    color: var(--form-input-txt-color);
 }
 
 .input-success.input{
@@ -406,9 +422,10 @@ html, body{
     box-shadow: 0 0 6px rgba(255, 100, 100, 0.2)
 }
 .contact__head input:focus{
-    border-color:rgb(102, 240, 244);
-    box-shadow: 0 0 6px rgba(102, 240, 244, 0.2);
-    outline-color:rgba(102, 240, 244, 0.5);
+    border-color: var(--input-focus-bdr-color);
+    outline-color: var(--input-focus-outline-color);
+    box-shadow: 0 0 6px var(--input-focus-box-shadow);
+    
 }
 .input-success.input:focus{
     border-color:rgb(50, 210, 150);
@@ -423,16 +440,16 @@ html, body{
     height: 200px;
     resize: none;
     padding: .8rem .9rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1.5px solid rgb(31, 42, 60);
-    color: rgb(234, 234, 234);
+    background: var(--form-input-bg-color);
+    border: 1.5px solid var(--form-input-bdr-color);
+    color: var(--form-input-txt-color);
     outline: none;
 }
 
 .contact__head textarea:focus{
-    border-color:rgb(102, 240, 244);
-    outline-color:rgba(102, 240, 244, 0.5);
-    box-shadow: 0 0 6px rgba(102, 240, 244, 0.2)
+    border-color: var(--input-focus-bdr-color);
+    outline-color: var(--input-focus-outline-color);
+    box-shadow: 0 0 6px var(--input-focus-box-shadow);
 }
 .contact__head label{
     position: absolute;
@@ -444,7 +461,7 @@ html, body{
     line-height: .85rem;
     z-index: 1;
     transition: .3s; 
-    color: rgb(234, 234, 234);
+    color: var(--contact-frm-label-color);
 }
 .focus label{
     transform: translateY(-190%);
@@ -453,7 +470,7 @@ html, body{
     letter-spacing: 5px;
     line-height: .8rem;
     left: 1.1rem;
-    color: rgb(234, 234, 234);
+    color: var(--contact-frm-label-color);
 }
 .contact__head .contact__label{
     position: absolute;
@@ -475,8 +492,7 @@ html, body{
     position: absolute;
     width: 100%;
     height: .95rem;
-    background:rgb(31, 42, 60);
-    background: rgba(31, 42, 60, 0.95);
+    background: var(--contact-frm-label-bg);
     bottom: 0;
     top: -1px;
     padding: 2px;
@@ -489,19 +505,6 @@ html, body{
     right: 0;
 }
 
-/*
-.btn{
-    margin-top: 1.2rem;
-    padding: 1.5rem 5rem;
-    background: transparent;
-    border: 1px solid transparent;
-    color: var(--nav-color);
-    font-size: 1.3rem;
-    border: 2px solid var(--nav-active2);
-    z-index: 1;
-}
-*/
-
 .submitform{
     display: block;
     right: 0;
@@ -513,9 +516,9 @@ html, body{
     font-size: 1.2rem;
     font-weight: bold;
     border: 1px solid none;
-    background: rgb(0, 183, 194);
-    border: 1px solid rgb(0, 183, 194);
-    color: var(--nav-list-color);
+    background: var(--contact-submit-btn-bg);
+    border: 1px solid var(--contact-submit-btn-bdr-color);
+    color: var(--contact-submit-btn-text-color);   
     letter-spacing: 1px;
     text-transform: capitalize;
     position: relative;
@@ -532,20 +535,22 @@ html, body{
 /*thank you page*/
 .thankYouContainer{
     position: relative;
-    background: black;
+    background: rgb(18 18 18);
     box-sizing: border-box;
     padding: 2rem;
     width: 100%;
     height: 100dvh;
     display: grid;
     place-content: center;
+    font-family: sans-serif
 }
 .thankYou{
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255);
-    color: var(--bg-color);
-    border: 1px solid white;
+    background: rgb(28 28 30);
+    color: rgb(0 150 136);
+    border: 1px solid rgb(50, 50, 50);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.7);
     border-radius: 3rem;
     margin: auto;
     display: flex;
@@ -559,8 +564,7 @@ html, body{
     position: relative;
     width: 6rem;
     height: 6rem;
-    background: var(--bg-color);
-    background-color: rgb(11, 69, 15);
+    background-color: rgb(255, 215, 0);
     border-radius: 50%;
     margin-bottom: 3rem;
     display: flex;
@@ -568,7 +572,7 @@ html, body{
     justify-content: center;
 }
 .icon_container .fa-check{
-    color: white;
+    color: rgb(18, 18, 18);
     font-size: 4.5rem;
 }
 .thank_you-par{
@@ -576,10 +580,12 @@ html, body{
     border-radius: .2rem;
     padding: 1rem;
     text-align: center;
+   
 }
 .visitors_name{
-    color: rgb(11, 69, 15);
+    color: rgb(0 180 160);
     font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 180, 160, 0.3);
 }
 .redirectButton{
     display: block;
@@ -589,30 +595,32 @@ html, body{
     padding: .8rem 5rem;
     font-size: 1rem;
     font-weight: bold;
-    border: 1px solid rgb(10, 10, 48);
+    border: 1px solid rgb(0, 122, 110);
     border-radius: 3rem;
-    background: rgb(8, 8, 97);
-    background: rgb(10, 10, 48);
-    color: white;
+    background-color: rgb(0, 150, 136);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
     text-transform: capitalize;
     cursor: pointer;
+    transition: all ease-in .8s;
+}
+.redirectButton:hover{
+    background-color: rgb(0, 122, 110);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 100, 90);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
 }
 
+/* style the about section */
 
-
-/*
-.btn{
-    margin-top: 1.2rem;
-    padding: 1.5rem 5rem;
-    background: transparent;
-    border: 1px solid transparent;
-    color: var(--nav-color);
-    font-size: 1.3rem;
-    border: 2px solid var(--nav-active2);
-    z-index: 1;
+.about_section{
+    width: 100%;
+    min-height: 100dvh;
+    background: rgb(13, 27, 42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-*/
-
 
 @media (max-width:768px) {
     .hambugger{

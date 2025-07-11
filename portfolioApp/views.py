@@ -13,7 +13,7 @@ def home(request):
     context = {}
     return render(request, 'portfolioApp/home.html', context)
 
-def about(request):
+def about_me(request):
     context = {}
     return render(request, 'portfolioApp/about.html', context)
 
@@ -88,3 +88,4 @@ def test_email_view(request):
         recipient_list=['admin@example.com'],
     )
     return HttpResponse("✅ Email sent — check terminal.")
+
