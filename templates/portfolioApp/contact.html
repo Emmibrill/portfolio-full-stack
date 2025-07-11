@@ -65,12 +65,4 @@
 
 {% endblock %}
 
-{% block scripts %}
-<script type="module">
-    import { attachFormValidator } from "{% static 'js/validateForm.js' %}";
 
-    document.addEventListener("DOMContentLoaded", () => {
-        attachFormValidator('#contact', '.input');
-    });
-</script>
-{% endblock %}

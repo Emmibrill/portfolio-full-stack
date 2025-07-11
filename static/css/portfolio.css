@@ -568,7 +568,7 @@ html, body{
     justify-content: center;
 }
 .icon_container .fa-check{
-    color: var(--text-color);
+    color: white;
     font-size: 4.5rem;
 }
 .thank_you-par{
@@ -593,7 +593,7 @@ html, body{
     border-radius: 3rem;
     background: rgb(8, 8, 97);
     background: rgb(10, 10, 48);
-    color: var(--text-color);
+    color: white;
     text-transform: capitalize;
     cursor: pointer;
 }

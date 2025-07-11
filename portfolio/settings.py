@@ -33,6 +33,8 @@ EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 
 # Contact email (for receiving messages from a contact form)
 CONTACT_EMAIL = env.str("CONTACT_EMAIL", default=EMAIL_HOST_USER)
+print("📦 EMAIL_BACKEND in use:", EMAIL_BACKEND)
+
 
 from pathlib import Path
 

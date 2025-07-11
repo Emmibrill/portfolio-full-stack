@@ -73,7 +73,7 @@ function removefocus(){
 // This code validates the contact form fields and provides feedback to the user. 
 // It checks for empty fields, valid email format, and minimum character requirements for the message field.
 // It also handles success and error states for each field, including server errors.           
-/*document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector('#contact');
     const fields = document.querySelectorAll('.input')
 
@@ -95,7 +95,7 @@ function removefocus(){
             if(!formIsValid){
                 e.preventDefault();
             }else{
-                clearField();
+                return true;
             }
         })
     }
@@ -217,7 +217,7 @@ function removefocus(){
 
     formValidator();
 })
-*/
+
 
 //start a new line of coding here
 

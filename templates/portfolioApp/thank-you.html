@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thankyou</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+</head>
+<body>
+    <div class="thankYouContainer">
+        <div class="thankYou">
+            <div class="icon_container">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="thank_you-par">
+                <p>thank you <span class="visitors_name">{{name}}</span> for reaching out!</p>
+                <p>your message has been sent successfully.</p>
+                {% if project %}
+                    <p>I appreciate you taking the time to explore my work.</p>
+                {% else %}
+                    <p>New project will be uploaded soon! </p>
+                {% endif %}
+                
+            <p>I'll be in touch shortly</p>
+            </div>
+
+            <a href="{% url 'home' %}" class="redirectButton">back to home</a>
+        </div>
+    
+    </div>
+</body>
+</html>
