@@ -703,6 +703,33 @@ html, body{
     color: var(--mobile-nav-text-color);
     padding: 1rem;
 }
+/* contact social */
+.social_con{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 5rem;
+    padding: 2rem 1rem 1rem;
+    border-bottom: 2px solid var(--bg-color-nav);
+    width: fit-content;
+}
+.social{
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social.facebook svg{
+    fill: rgb(59, 89, 152);  
+}
+.social.instagram svg{
+    fill: rgb(193, 53, 132);
+}
+.social.linkedin svg{
+    fill: rgb(0, 119, 181);
+}
 @media (max-width:768px) {
     .hambugger{
         position: fixed;
