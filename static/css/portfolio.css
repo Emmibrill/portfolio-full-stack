@@ -848,6 +848,13 @@ html, body{
         height: 30rem;
         object-fit: cover;
     }
+    .about_rht-wrp{
+        padding-top: 0;
+    }
+    .about_rht-wrp p{
+        padding-top: 0;
+    }
+
 }
 
 @media (max-width:425px) {
