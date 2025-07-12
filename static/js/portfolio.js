@@ -84,6 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //validates form on submit
     function validateOnSubmit() {
+        if(!form) return; // Ensure form exists
+        
+        // Add a submit event listener to the form
         form.addEventListener('submit', (e) => {
             let formIsValid = true;
             fields.forEach(field => {
