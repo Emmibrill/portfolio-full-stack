@@ -808,6 +808,21 @@ html, body{
         font-size: 1rem;
         line-height: 1.5rem;
     }
+    /* contact social */
+    .social_con{
+        width: 100%;
+        justify-content: center;
+        gap: 5rem;
+        margin: 1rem 0;
+        padding: 1rem;
+        border-top: 2px solid var(--bg-color-nav);
+
+    }
+    .social{
+        width: 2rem;
+        height: 2rem;
+        position: relative;
+    }
 
 }
     
