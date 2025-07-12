@@ -623,7 +623,7 @@ html, body{
     padding: 5rem 0 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(30rem, 100%), 1fr));
-    max-width: 100%;
+    min-width: 100%;
 }
 .about_lft-wrp{
     box-sizing: border-box;
@@ -638,6 +638,7 @@ html, body{
 .about_name-con{
     position:sticky;
     top: 4rem;
+    z-index: 1;
     display: block;
     width: 100%;
     text-align: center;
@@ -764,6 +765,10 @@ html, body{
         flex-direction: column-reverse;
     
     }
+    .about_img{
+        width: 40rem;
+        height: 40rem;
+    }
     .about_name-con{
         position: relative;
         top: -3.4rem;
@@ -772,7 +777,7 @@ html, body{
         font-size: 2.5rem;
     }
     .about_rht-wrp{
-        padding: 1rem;
+        padding: .5rem;
         font-size: 1rem;
         line-height: 1.5rem;
     }
@@ -812,7 +817,7 @@ html, body{
 
    .errorMessage{
     font-size: .8rem;
-}
+    }
     .errorMessage--message{
         font-size: .8rem;
     }
@@ -836,6 +841,12 @@ html, body{
     .redirectButton{
         padding: .8rem 4rem;
         font-size: .8rem;
+    }
+    /*about section*/
+    .about_img{   
+        width: 100dvw;
+        height: 30rem;
+        object-fit: cover;
     }
 }
 
