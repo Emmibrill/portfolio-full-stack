@@ -1,8 +1,35 @@
 {% extends "portfolioApp/base.html" %}
-{% block content %}
+{% load static %}
+
+{% block contents %}
 <section class="about_section">
-    <div class="about_con">
+    <div class="about_wrapper">
+        <div class="about_lft-wrp">
+            <div class="about_name-con">
+                <h1 class="name_par">HI I'm Emmanuel</h1>
+            </div>
+            <div class="about_img-con">
+                <img src="{% static 'images/professional_headshot.webp' %}" alt="Emmibrill Udo's Professional Headshot" class="about_img">
+            </div>
+        </div>
         
+        <div class="about_rht-wrp">
+            <p>
+                I am software Enginee based in Lagos. I love writing codes, and solving problems 
+                using technology. I am passionate about building innovative solutions that make a 
+                difference in people's lives. I love colaboration and I am always eager to learn new skills and technologies.
+            </p>
+
+            <p>
+                Guess what? I am also a civil engineer who is also a project manager, and yes I love working out    
+            </p>
+
+            <div class="social_con">
+                <div class="social facebook"></div>
+                <div class="social instagram"></div>
+                <div class="social linkedin"></div>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}

@@ -614,14 +614,94 @@ html, body{
 /* style the about section */
 
 .about_section{
-    width: 100%;
-    min-height: 100dvh;
+    min-width: 100%;
+    min-height: 100%;
     background: rgb(13, 27, 42);
+}
+.about_wrapper{
+    background: rgb(20, 37, 55);
+    padding: 5rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(30rem, 100%), 1fr));
+    max-width: 100%;
+}
+.about_lft-wrp{
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 }
+.about_name-con{
+    position:sticky;
+    top: 4rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.name_par{
+    font-size: 3.1rem;
+    color: rgb(234, 234, 234);
+    color: transparent;
+    -webkit-text-stroke: 5px rgb(234, 234, 234) ;
+    font-family: 'Comfortaa', cursive;
+}
+.about_img-con{
+    position: relative;
+    max-width: fit-content;
+    height: 100%;
+    overflow: hidden;
+    background: rgb(28, 47, 66);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .4);
+}
+.about_img{
+    width: 100%;    
+    min-height: 100%;
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+}
+/*.about_img-con::before{
+    position: absolute;
+    content: '';
+    width: 45%;
+    height: 45%;
+    top: 0;
+    left: 0;
+    border-radius: .1rem;
+    border-top: 5px solid rgb(27, 25, 25);
+    border-left: 5px solid rgb(27, 25, 25);
+    
+}
+.about_img-con::after{
+    position: absolute;
+    content: '';
+    width: 45%;
+    height: 45%;
+    bottom: 0;
+    right: 0;
+    border-bottom: 5px solid rgb(27, 25, 25);
+    border-right: 5px solid rgb(27, 25, 25);
+}*/
 
+.about_rht-wrp{
+    width: 100%;
+    padding: 2rem 2rem 0 0;
+    color: rgb(234, 234, 234);
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    text-align: left;
+}
+.about_rht-wrp p{
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: var(--mobile-nav-text-color);
+    padding: 1rem;
+}
 @media (max-width:768px) {
     .hambugger{
         position: fixed;
@@ -667,17 +747,35 @@ html, body{
     }
     
 
-    /*thank you page*/
-.icon_container .fa-check{
-    color: var(--text-color);
-    font-size: 4rem;
-}
-.redirectButton{
-    margin: 2rem;
-    padding: .8rem 5rem;
-    font-size: 1rem;
-    border-radius: 3rem;
-}
+        /*thank you page*/
+    .icon_container .fa-check{
+        color: var(--text-color);
+        font-size: 4rem;
+    }
+    .redirectButton{
+        margin: 2rem;
+        padding: .8rem 5rem;
+        font-size: 1rem;
+        border-radius: 3rem;
+    }
+
+    /* about section*/
+    .about_lft-wrp{
+        flex-direction: column-reverse;
+    
+    }
+    .about_name-con{
+        position: relative;
+        top: -3.4rem;
+    }
+    .name_par{
+        font-size: 2.5rem;
+    }
+    .about_rht-wrp{
+        padding: 1rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
 
 }
     
