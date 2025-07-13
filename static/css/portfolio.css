@@ -775,8 +775,8 @@ html, body{
 }
 .my_avatar{
     inset: 0;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     animation: shake 6s ease-in-out infinite;
 }
 .coder_name-con{
