@@ -1064,6 +1064,7 @@ footer {
     margin-top: 0rem;
     padding: 7rem 2rem;
     opacity: .9;
+    background: rgba(31 42 60 / .5);
 }
 .service_head{
     display: flex;
@@ -1094,6 +1095,19 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.service_con:hover{
+    transform:translateY(-5px);
+    box-shadow:0 1rem 2rem  rgba(14, 13, 13, .5);
+   
+}
+.active.service_con{
+    transform:translateY(-3px);
+    box-shadow:0 1rem 2rem  rgba(14, 13, 13, .5);
+   
 }
 .icon_con{
     position: relative;

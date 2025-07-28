@@ -276,10 +276,18 @@ function showServices(){
         </div>`
   })
   myServicesCon.innerHTML = myServices;
-  console.log(myServices);
 }
 showServices();
 
+const activeService = document.querySelectorAll('.service_con')
+activeService.forEach(con => {
+  console.log(con)
+  con.addEventListener('click', () => {
+    activeService.forEach(con => {
+      con.classList.remove('active')
+    })
+    con.classList.add('active')
+  })
+})
 
-console.log(myServicesCon);
 
