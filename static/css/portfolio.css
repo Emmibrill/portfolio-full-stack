@@ -861,7 +861,7 @@ footer {
     overflow: hidden;
     background: rgb(28, 47, 66);
     box-shadow: 0 8px 16px rgba(0, 0, 0, .4);
-    padding: .1rem;
+    padding: .2rem;
     z-index: 0;
     
 }
