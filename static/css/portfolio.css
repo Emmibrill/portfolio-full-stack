@@ -199,14 +199,6 @@ footer {
     gap: 2rem;
 }
 
-.footer_top h1 {
-    padding: 1rem;
-    color: var(--mobile-nav-text-color);
-    font: 3rem;
-    font-weight: bolder;
-    font-family: Impact, sans-serif;
-}
-
 .name_socials {
     flex: 50% 0;
     padding: 0 1rem;
@@ -1061,6 +1053,75 @@ footer {
 }
 
 
+/* style service section*/
+
+.services{
+    position: relative;
+    /*background: url(laptop-keyboard-in-red-hue.jpg);*/
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 0rem;
+    padding: 7rem 2rem;
+    opacity: .9;
+}
+.service_head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-transform: capitalize;
+    transform: translateY(-3rem);
+    padding: 1rem;
+    color: var(--mobile-nav-text-color);
+    -webkit-text-stroke: .2px var(--mobile-nav-text-color);
+    font-size: 2rem;
+    font-weight: bolder;
+}
+.all_services{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    gap: 1rem;
+}
+.service_con{
+    background: var(--form-input-bg-color);
+    border-radius: .5rem;
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.icon_con{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+.icon_con .fa-solid{
+    position: absolute;
+    font-size: 3rem;
+    color: #0ff;
+
+}
+.ser_wrtup, .ser_par{
+    z-index: 1;
+}
+.ser_wrtup-txt{
+    text-transform: capitalize;
+    font-size: 1rem;
+    line-height: 1.1rem;
+    color: var(--mobile-nav-text-color);
+}
+.ser_par-wrtup{
+    color: var(--mobile-nav-text-color);
+}
 
 
 

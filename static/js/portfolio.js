@@ -2,6 +2,8 @@ const navToggler = document.querySelector(".hambugger");
 const navList = document.querySelector(".lists");
 const navTabs = document.querySelectorAll(".list__tab");
 const navTabsPar = document.querySelectorAll(".list");
+const myServicesCon = document.querySelector(".all_services");
+console.log(myServicesCon);
 
 //activates the navigation bar and controls the hambugger movement
 function activateNavbar() {
@@ -225,4 +227,59 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //start a new line of coding here
+
+//display services
+
+
+function showServices(){
+
+  let myServices = '';
+  let ser = [
+    {
+      serviceIcon: '<i class="fa-solid fa-mobile"></i>',
+      serviceName: "mobile friendly layout",
+      servicePar: `For a seamless and productive user experience, 
+                  having a mobile-responsive website is absolutely 
+                  necessary. This is one area I do not shirk from`,
+    },
+    {
+      serviceIcon: '<i class="fa-solid fa-laptop"></i>',
+      serviceName: "web development",
+      servicePar: `creation, development, and management of websites 
+                        and online applications while implementing best practices 
+                        for coding and providing clear documentation`,
+    },
+    {
+      serviceIcon: '<i class="fa-solid fa-gears"></i>',
+      serviceName: "Back-End Development",
+      servicePar: `I create and maintain website and web App functionality 
+                        when users request information or when website needs to relate 
+                        to another part of the web architecture`,
+    },
+  ]
+
+  ser.forEach(s => {
+    myServices += `
+    <div class="service_con">
+            <div class="icon_con">
+                ${s.serviceIcon}
+            </div>
+            <div class="ser_wrtup">
+                <h2 class="ser_wrtup-txt">${s.serviceName}</h2>
+            </div>
+            <div class="ser_par">
+                <p class="ser_par-wrtup">
+                    ${s.servicePar} 
+                </p>
+            </div>
+                    
+        </div>`
+  })
+  myServicesCon.innerHTML = myServices;
+  console.log(myServices);
+}
+showServices();
+
+
+console.log(myServicesCon);
 

@@ -13,6 +13,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('thank-you/<str:name>/', views.thank_you, name='thank-you'),
     path('test-email/', views.test_email_view),
+    path('my-service/', views.my_service, name='my-service'),
     
 
 ]

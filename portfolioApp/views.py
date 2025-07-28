@@ -65,7 +65,7 @@ def contact(request):
 
             return redirect('thank-you', name=name)  #redirect URL name
         else:
-            # ✅ DEBUG: Show why form failed
+            #DEBUG: Show why form failed
             print("Form is invalid:", form.errors)
     else:
         form = contactForm()
@@ -77,7 +77,9 @@ def contact(request):
 def thank_you(request, name):
     return render(request, 'portfolioApp/thank-you.html', {'name': name})
 
-
+def my_service(request):
+    context = {}
+    return render(request, 'portfolioApp/service.html', context)
    
 
 def test_email_view(request):
