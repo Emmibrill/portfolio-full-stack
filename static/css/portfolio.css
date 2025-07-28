@@ -1228,8 +1228,11 @@ footer {
     /* swiper */
 
     .item{
-        width: 80%;
+        width: 100%;
         height: 20rem;
+    }
+     .item:nth-child(1n) {
+    width: 90%;
     }
 
     .item:nth-child(2n) {
