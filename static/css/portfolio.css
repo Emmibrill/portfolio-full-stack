@@ -1102,11 +1102,14 @@ footer {
 .service_con:hover{
     transform:translateY(-5px);
     box-shadow:0 1rem 2rem  rgba(14, 13, 13, .5);
+    border: 1px solid #0ff;
    
 }
 .active.service_con{
     transform:translateY(-3px);
     box-shadow:0 1rem 2rem  rgba(14, 13, 13, .5);
+    border: 1px solid #0ff;
+    border: 1px solid #ff   f;
    
 }
 .icon_con{
