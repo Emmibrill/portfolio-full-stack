@@ -9,8 +9,8 @@ django-environ = "*"
 pillow = "*"
 gunicorn = "*"
 dj-database-url = "*"
-psycopg2-binary = "*"
 whitenoise = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

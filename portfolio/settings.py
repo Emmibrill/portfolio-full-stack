@@ -12,11 +12,21 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 import environ  # Import environ package
 import os
-import dj_database_url  # Import dj_database_url for database configuration
+
+
 
 
 # Initialise environment variables
-env = environ.Env()
+env = environ.Env(
+    DEBUG=(bool, True),  # Default to True for development
+    SECRET_KEY=(str, ''),  # Default to empty string, must be set in .env
+    CLOUDINARY_CLOUD_NAME=(str, ''),    # Default to empty string, must be set in .env
+    CLOUDINARY_API_KEY=(str, ''),       # Default to empty string, must be set in .env
+    CLOUDINARY_API_SECRET=(str, ''),    # Default to empty string, must be set in .env
+    DATABASE_URL=(str, ''),  # Default to empty string, must be set in .env
+    EMAIL_BACKEND=(str, 'django.core.mail.backends.console.EmailBackend'),  # Default to console backend for development
+    EMAIL_HOST=(str, 'localhost'),  # Default to localhost for development
+)
 environ.Env.read_env(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
 
 
@@ -106,11 +116,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 if env("DATABASE_URL", default=None):
     DATABASES = {
-        "default": dj_database_url.config(
-            default=env("DATABASE_URL"),
-            conn_max_age=600,
-            ssl_require=True,
-        )
+        "default":  env.db(), # Uses DATABASE_URL (PostgreSQL in production)
     }
 else:
     DATABASES = {
