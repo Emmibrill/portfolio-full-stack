@@ -7,9 +7,10 @@ name = "pypi"
 django = "*"
 django-environ = "*"
 pillow = "*"
-dj-database-url = "*"
 django-cloudinary-storage = "*"
 gunicorn = "*"
+dj-database-url = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
