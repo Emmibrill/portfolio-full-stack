@@ -114,15 +114,25 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 # Database configuration
 
-if env("DATABASE_URL", default=None):
+USE_RAILWAY_DB = env.bool("USE_RAILWAY_DB", default=bool(os.environ.get("RAILWAY_ENVIRONMENT")))
+
+
+if USE_RAILWAY_DB:
     DATABASES = {
-        "default":  env.db(), # Uses DATABASE_URL (PostgreSQL in production)
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': env('PGDATABASE'),
+            'USER': env('PGUSER'),
+            'PASSWORD': env('PGPASSWORD'),
+            'HOST': env('PGHOST'),
+            'PORT': env('PGPORT'),
+        }
     }
 else:
     DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / "db.sqlite3",
         }
     }
 
