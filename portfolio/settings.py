@@ -30,8 +30,16 @@ env = environ.Env(
 environ.Env.read_env(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
 
 
-# Email settings for real email backend
-DEBUG = env.bool("DEBUG", default=True)
+
+ENVIRONMENT = env("ENVIRONMENT", default="development")
+DEBUG = env.bool("DEBUG", default=(ENVIRONMENT == "development"))
+
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 
 # Email Config (Development mode using local SMTP server or console backend)
 EMAIL_BACKEND = env('EMAIL_BACKEND')
@@ -43,7 +51,7 @@ EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 
 # Contact email (for receiving messages from a contact form)
 CONTACT_EMAIL = env.str("CONTACT_EMAIL", default=EMAIL_HOST_USER)
-print("📦 EMAIL_BACKEND in use:", EMAIL_BACKEND)
+#print("📦 EMAIL_BACKEND in use:", EMAIL_BACKEND)
 
 
 from pathlib import Path
@@ -75,18 +83,22 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'portfolioApp',  #portfolio app
     'portfolioAPI',  #portfolio API
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    # WhiteNoiseMiddleware is used to serve static files in production
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    # WhiteNoiseMiddleware is used to serve static files in production  
+    
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -98,6 +110,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',  #
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -174,8 +187,48 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Directory for static files during development
 # STATIC_ROOT is used for collecting static files in production
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # Directory for collected static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from cloudinary_storage.storage import MediaCloudinaryStorage
+
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': env('CLOUDINARY_API_KEY'),
+    'API_SECRET': env('CLOUDINARY_API_SECRET'),
+}
+
+
+# CSRF trusted origins for production
+# Add your production domain here, e.g., "https://yourdomain.com"
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[
+    "https://portfolio-full-stack-production.up.railway.app",
+])
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import logging
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
