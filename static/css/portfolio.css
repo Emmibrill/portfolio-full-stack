@@ -119,7 +119,10 @@ body {
 }
 #particles-js {
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: 1;
       pointer-events: none;
     }
@@ -913,7 +916,7 @@ footer {
 
 .about_img-con {
     position: relative;
-    max-width: fit-content;
+    min-width: 100%;
     height: 100%;
     overflow: hidden;
     background: rgb(28, 47, 66);
@@ -1076,7 +1079,7 @@ footer {
 .about_section-three {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: fit-content;
     align-items: center;
     justify-content: center;
     border: 1px solid var(--form-input-bdr-color);
