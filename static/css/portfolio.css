@@ -19,9 +19,10 @@
 
 }
 
+
 *:root {
 
-    /* dark mood color scheme */
+  
     --bg-color-nav: rgb(13, 27, 42);
     --mobile-nav-bg: rgb(31, 42, 60);
     --mobile-nav-text-color: rgb(234, 234, 234);
@@ -56,7 +57,59 @@
     --contact-submit-btn-hover-text-color: rgb(13, 27, 42);
     --contact-submit-btn-hover-bdr-color: rgb(255, 181, 102);
     font-family: 'Comfortaa', cursive;
+
+    
 }
+
+
+/*
+*:root {
+  
+  --bg-color-nav: rgb(18, 18, 20); 
+  --mobile-nav-bg: rgb(28, 28, 35); 
+  --mobile-nav-text-color: rgb(240, 240, 245); 
+  --mobile-nav-active: rgb(98, 188, 250); 
+  --nav-color: rgb(240, 240, 245);
+  --nav-active: rgb(98, 188, 250);
+  --hambugger-color: rgb(240, 240, 245);
+
+  --no-project-bg: rgb(18, 18, 20);
+  --no-project-dialogue-box-bg: rgb(32, 34, 42);
+  --no-project-dialogue-box-text-color: rgb(235, 235, 240);
+  --no-project-dialogue-box-icon-color: rgb(255, 121, 168); 
+
+  --dialogue-box-btn-bg: rgb(98, 188, 250);
+  --dialogue-box-btn-text-color: rgb(18, 18, 20);
+  --dialogue-box-btn-hover-bg: rgb(255, 121, 168);
+  --dialogue-box-btn-hover-text-color: rgb(18, 18, 20);
+
+  --form-heading-color: rgb(240, 240, 245);
+  --form-section-bg: rgb(18, 18, 20);
+  --contact-form-bg: rgb(28, 28, 35);
+  --form-input-bdr-color: rgb(38, 40, 48);
+  --form-input-bg-color: rgba(255, 255, 255, 0.04); 
+  --form-input-txt-color: rgb(235, 235, 240);
+
+  --input-focus-bdr-color: rgb(255, 121, 168); 
+  --input-focus-outline-color: rgba(255, 121, 168, 0.4);
+  --input-focus-box-shadow: rgba(255, 121, 168, 0.2);
+
+  --contact-frm-label-color: rgb(235, 235, 240);
+  --contact-frm-label-bg: rgba(28, 28, 35, 0.9);
+
+  --box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.4);
+
+  --contact-submit-btn-bg: rgb(98, 188, 250);
+  --contact-submit-btn-bdr-color: rgb(98, 188, 250);
+  --contact-submit-btn-text-color: rgb(18, 18, 20);
+
+  --contact-submit-btn-hover-bg: rgb(255, 121, 168);
+  --contact-submit-btn-hover-text-color: rgb(18, 18, 20);
+  --contact-submit-btn-hover-bdr-color: rgb(255, 121, 168);
+
+  font-family: 'Comfortaa', cursive;
+}
+*/
 
 html,
 body {
@@ -64,9 +117,17 @@ body {
     height: 100%;
     background: var(--bg-color-nav);
 }
+#particles-js {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
 
 .nav__tab {
     position: fixed;
+    top: 0;
+    right: 0;
     width: 100%;
     height: 4rem;
     display: inline-flex;
@@ -74,6 +135,7 @@ body {
     justify-content: space-between;
     padding: 0 2rem;
     background: var(--bg-color-nav);
+    border-bottom: 1px solid var(--form-input-bdr-color);
     cursor: pointer;
     z-index: 999;
 }
@@ -192,6 +254,8 @@ footer {
     width: 100%;
     background: rgb(13, 25, 38);
     border-top: 1px solid rgba(0, 255, 255, .2);
+    z-index: 2;
+
 }
 
 .footer_top {
@@ -505,11 +569,11 @@ footer {
     max-width: 50rem;
     border-radius: 1rem;
     background: var(--contact-form-bg);
-    border: none;
     font-family: 'Comfortaa', cursive;
     display: block;
     padding: 1rem;
     margin: 1rem;
+    z-index: 2;
 }
 
 .contact__head {
@@ -826,6 +890,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 
 }
 
@@ -1144,6 +1209,53 @@ footer {
     color: var(--mobile-nav-text-color);
 }
 
+
+/** style tools section **/
+
+
+.tools_sec{
+    margin-top: 5rem;
+    color: var(--mobile-nav-text-color);
+    height: 30rem;
+    min-width: 100%;
+    background: var(--form-section-bg);
+    border: 1px solid #0ff;
+}
+
+.tools_wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+    gap: 1rem;
+}
+.tools_card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: blue;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+.Svg_con{
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+}
+
+.svg_con svg{
+    position: absolute;
+    inset: .3rem;
+    width: 3rem;
+    height: 3rem;
+    fill: var(--mobile-nav-text-color);
+}
 
 
 

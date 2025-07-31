@@ -12,12 +12,6 @@
     <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
     
 
-    <!-- Tailwind CSS via CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-    
-    
-    
     
 </head>
 <body>
@@ -52,14 +46,12 @@
         </div>
     </header>
 
-    <section>
+    <div id="particles-js"></div>
 
-        {% block contents %}
+    {% block contents %}
 
-        {% endblock %}
+    {% endblock %}
          
-        
-    </section>
     
     <footer>
         <div class="footer_top">
@@ -93,6 +85,34 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.2 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#ffffff",
+          opacity: 0.25,
+          width: 1
+        },
+        move: { enable: true, speed: 1.5 }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
     <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -109,21 +129,6 @@
     });
   </script>
 
-  <!-- ScrollReveal.js -->
-  <script src="https://unpkg.com/scrollreveal"></script>
-
-  <!-- ScrollReveal Init -->
-  <script>
-    ScrollReveal().reveal('.reveal', {
-      origin: 'bottom',
-      distance: '30px',
-      duration: 800,
-      delay: 200,
-      easing: 'ease-in-out',
-      interval: 150,
-      reset: false
-    });
-  </script>
   
   <script src="{% static 'js/portfolio.js' %}"></script>
 
