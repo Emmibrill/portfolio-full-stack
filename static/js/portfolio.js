@@ -3,7 +3,8 @@ const navList = document.querySelector(".lists");
 const navTabs = document.querySelectorAll(".list__tab");
 const navTabsPar = document.querySelectorAll(".list");
 const myServicesCon = document.querySelector(".all_services");
-console.log(myServicesCon);
+const toolsContainer = document.querySelector(".tools_con");
+console.log(toolsContainer);
 
 //activates the navigation bar and controls the hambugger movement
 function activateNavbar() {
@@ -285,8 +286,10 @@ activeService.forEach(con => {
   con.addEventListener('click', () => {
     activeService.forEach(con => {
       con.classList.remove('active')
+      con.style.border = 'none'
     })
     con.classList.add('active')
+     con.style.border = '1px solid #0ff';
   })
 })
 

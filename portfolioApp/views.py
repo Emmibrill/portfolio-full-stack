@@ -81,6 +81,10 @@ def my_service(request):
     context = {}
     return render(request, 'portfolioApp/service.html', context)
    
+def my_tools(request):
+    context = {}
+    return render(request, 'portfolioApp/tools.html', context)
+   
 
 def test_email_view(request):
     send_mail(

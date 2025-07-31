@@ -14,6 +14,7 @@ urlpatterns = [
     path('thank-you/<str:name>/', views.thank_you, name='thank-you'),
     path('test-email/', views.test_email_view),
     path('my-service/', views.my_service, name='my-service'),
+    path('my-tools/', views.my_tools, name='my-tools'),
     
 
 ]
