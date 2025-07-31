@@ -557,7 +557,7 @@ footer {
 
 .form-section {
     width: 100%;
-    min-height: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -577,6 +577,7 @@ footer {
     display: block;
     padding: 1rem;
     margin: 1rem;
+    border: 1px solid #0ff;
 }
 
 .contact__head {
@@ -872,7 +873,6 @@ footer {
 /* style the about section */
 
 .about_section-one {
-    margin: 2rem;
     min-width: 100%;
     min-height: 100%;
     background: rgb(13, 27, 42);
@@ -1054,7 +1054,9 @@ footer {
     gap: 2rem;
     background: rgb(20, 37, 55);
     background: var(--form-section-bg);
-    margin: 3rem 2rem 2rem;
+    padding: 3rem 2rem 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     color: var(--mobile-nav-text-color);
     cursor: default;
 }
