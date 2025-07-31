@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Clicker+Script&family=Rajdhani:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Clicker+Script&family=Rajdhani:wght@300;500;600;700&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 
@@ -22,7 +25,7 @@
 
 *:root {
 
-  
+
     --bg-color-nav: rgb(13, 27, 42);
     --mobile-nav-bg: rgb(31, 42, 60);
     --mobile-nav-text-color: rgb(234, 234, 234);
@@ -57,6 +60,7 @@
     --contact-submit-btn-hover-text-color: rgb(13, 27, 42);
     --contact-submit-btn-hover-bdr-color: rgb(255, 181, 102);
     font-family: 'Comfortaa', cursive;
+    font-family: Rajdhani;
 
     
 }
@@ -138,6 +142,7 @@ body {
     justify-content: space-between;
     padding: 0 2rem;
     background: var(--bg-color-nav);
+    background: rgb(9, 18, 28);
     border-bottom: 1px solid var(--form-input-bdr-color);
     cursor: pointer;
     z-index: 999;
@@ -383,7 +388,7 @@ footer {
     align-items: center;
     justify-content: center;
     background: var(--no-project-bg);
-    font-family: 'comfortaa', cursive;
+    /*font-family: 'comfortaa', cursive;*/
     z-index: 10;
 }
 
@@ -547,12 +552,12 @@ footer {
     align-items: center;
     justify-content: center;
     color: var(--form-heading-color);
-    font-family: 'Comfortaa', cursive;
+    /*font-family: 'Comfortaa', cursive;*/
     padding: 1rem 0 2.5rem;
     font-weight: 600;
     letter-spacing: .5px;
     font-size: 1.4rem;
-    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    /*font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;*/
 }
 
 .form-section {
@@ -564,7 +569,7 @@ footer {
     justify-content: center;
     background: var(--form-section-bg);
     margin: 6rem 0 2rem;
-    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    /*font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;*/
 }
 
 .contact__form {
@@ -572,7 +577,7 @@ footer {
     max-width: 50rem;
     border-radius: 1rem;
     background: var(--contact-form-bg);
-    font-family: 'Comfortaa', cursive;
+    /*font-family: 'Comfortaa', cursive;*/
     display: block;
     padding: 1rem;
     margin: 1rem;
@@ -903,14 +908,15 @@ footer {
     display: block;
     width: 100%;
     text-align: center;
+    z-index: 2;
 }
 
 .name_par {
     font-size: 3.1rem;
     color: rgb(234, 234, 234);
-    color: transparent;
-    -webkit-text-stroke: 5px rgb(234, 234, 234);
-    font-family: 'Comfortaa', cursive;
+    /*color: transparent;*/
+    /*-webkit-text-stroke: 5px rgb(234, 234, 234);*/
+    /*font-family: 'Comfortaa', cursive;*/
 }
 
 .about_img-con {
@@ -931,7 +937,7 @@ footer {
     width: 30rem;
     height: 30rem;
     object-fit: cover;
-    z-index: 2;
+    z-index: 1;
 }
 
 .about_img-con::before {
@@ -986,7 +992,7 @@ footer {
     width: 100%;
     padding: 2rem 2rem 0 0;
     color: rgb(234, 234, 234);
-    font-family: 'Comfortaa', cursive;
+    /*font-family: 'Comfortaa', cursive;*/
     font-size: 1.2rem;
     line-height: 1.6rem;
     text-align: left;
@@ -1241,7 +1247,6 @@ footer {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-   
     border-radius: .5rem;
     padding: 1rem;
 }
