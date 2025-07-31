@@ -563,7 +563,6 @@ footer {
     align-items: center;
     justify-content: center;
     background: var(--form-section-bg);
-    background: transparent;
     margin: 6rem 0 2rem;
     font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
 }
@@ -577,7 +576,7 @@ footer {
     display: block;
     padding: 1rem;
     margin: 1rem;
-    border: 1px solid #0ff;
+    border: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 .contact__head {
@@ -1052,11 +1051,10 @@ footer {
 .about_section-two {
     display: flex;
     gap: 2rem;
-    background: rgb(20, 37, 55);
     background: var(--form-section-bg);
     padding: 3rem 2rem 2rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color: var(--mobile-nav-text-color);
     cursor: default;
 }
