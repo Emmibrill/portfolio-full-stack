@@ -17,4 +17,25 @@
         
     </section>
 
-{% endblock %}
+    {% endblock %}
+
+    {% block extra_scripts %}
+
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <script>
+        ScrollReveal({
+            reset: true,
+            distance: '3rem',
+            duration: 1200,
+            easing: 'ease-in-out',
+            mobile: true,
+            cleanup: true,
+            viewFactor: 0.2,
+         })
+
+         ScrollReveal().reveal('.all_services .service_con', { delay: 150, origin: 'bottom', interval: 150});
+         /*ScrollReveal().reveal('.tools_con .tool', { delay: 300, origin: 'left', interval: 200, scale: .3});*/
+    </script>
+
+    {% endblock %}

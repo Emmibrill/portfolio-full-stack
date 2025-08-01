@@ -1170,18 +1170,22 @@ footer {
     border-radius: .5rem;
     padding: 2rem;
     display: flex;
-    gap: 1rem;
     flex-direction: column;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: all .3s;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
     box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5);
      
 }
 .all_services>.service_con:nth-child(1) {
     border: 1px solid #0ff;
+}
+
+html.sr .service_con{
+    visibility: hidden;
 }
 
 .service_con:hover{
@@ -1196,6 +1200,7 @@ footer {
     border: 1px solid #0ff;
    
 }
+
 .icon_con{
     position: relative;
     display: flex;
