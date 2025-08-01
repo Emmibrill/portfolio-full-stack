@@ -5,13 +5,15 @@
 
 <section class="tools_sec">
     <div class="tools_head">
-        <h1>Tools</h1>
+        <h1>My tools</h1>
         <p>Here are some of the tools I use in my projects.</p>
     </div>
     <div class="tools_wrapper">
         <div class="tools_card">
             <div class="svg_con">
-                <svg class="django" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M320 32C150.1 32 8 174.1 8 344c0 149.9 102.4 275.2 240 310.4V464H192c-17.7 0-32-14.3-32-32s14.3-32 32-32h64c17.7 0 32 14.3 32 32s-14.3 32-32 32H256v182.4C109.6 576.8 0 457.9 0 344C0 173.6 173.6 0 344 0s344 173.6 344 344c0 173.6-173.6 344-344 344c-17.7 0-32-14.3-32-32s14.3-32 32-32c123.7-.1 224-100.4 224-224S443.7 96 320 96z"/></svg>
+                <div class="dj_shape">
+                    <h1>dj</h1>
+                </div>
             </div>
             <h2>Django</h2>
             <p>A high-level Python web framework that encourages rapid development.</p>
@@ -33,7 +35,24 @@
     </div>
 </section>
 
+{% endblock %}
 
+{% block extra_scripts %}
 
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <script>
+        ScrollReveal({
+            reset: true,
+            distance: '3rem',
+            duration: 1200,
+            easing: 'ease-in-out',
+            mobile: true,
+            cleanup: true,
+            viewFactor: 0.2,
+         })
+
+         ScrollReveal().reveal('.tools_card', { delay: 150, origin: '', interval: 150, scale: .3});
+    </script>
 
 {% endblock %}

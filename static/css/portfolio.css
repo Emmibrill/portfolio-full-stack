@@ -1237,43 +1237,66 @@ html.sr .service_con{
 
 
 .tools_sec{
+   
     margin-top: 5rem;
     color: var(--mobile-nav-text-color);
-    height: 30rem;
-    min-width: 100%;
     background: var(--form-section-bg);
-    border: 1px solid #0ff;
+    padding: 1rem;
+    text-align: center;
+
 }
 
 .tools_wrapper{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
     gap: 1rem;
-}
-.tools_card{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: .5rem;
     padding: 1rem;
 }
-.Svg_con{
-    position: relative;
-    width: 5rem;
-    height: 5rem;
+.tools_card{
+    width: 100%;
+    height: 100%;
+    background: var(--form-input-bg-color);
+    border-radius: .5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5);
+}
+html.sr .tools_card{
+    visibility: hidden;
+}
+
+.dj_shape{
+    height: 2.1rem;
+    width: 2.1rem;
+    background: var(--mobile-nav-text-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
+}
+.dj_shape h1{
+    font-size: 1.2rem;
+    color: var(--mobile-nav-bg);
+    font-weight: 700;
+}
+.tools_card .svg_con{
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--mobile-nav-text-color);
+    border-radius: .5rem;
 }
 
 .svg_con svg{
-    position: absolute;
-    inset: .3rem;
+  
     width: 3rem;
     height: 3rem;
     fill: var(--mobile-nav-text-color);
