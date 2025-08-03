@@ -22,8 +22,18 @@
 
 }
 
-
+@property --gradient-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
 *:root {
+
+    --clr-1: #0ff;
+    --clr-2: #00f;
+    --clr-3: #f0f;
+    --clr-4: #0f0;
+    --clr-5: #0ff;
 
 
     --bg-color-nav: rgb(13, 27, 42);
@@ -886,11 +896,14 @@ footer {
 }
 
 .about_wrapper {
+    position: relative;
     background: rgb(20, 37, 55);
-    padding: 5rem 0 0;
+    padding: 5rem 0 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(30rem, 100%), 1fr));
     min-width: 100%;
+    z-index: 1;
+
 }
 
 .about_lft-wrp {
@@ -921,61 +934,55 @@ footer {
 
 .about_img-con {
     position: relative;
-    max-width: 100%;
-    height: 100%;
-    overflow: hidden;
+    width: 30rem;
+    height: 30rem;
     background: rgb(28, 47, 66);
     box-shadow: 0 8px 16px rgba(0, 0, 0, .4);
-    padding: .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.1rem;
     
 }
 
 .about_img {
-    position: relative;
+    position: absolute;
     width: 100%;
-    min-height: 100%;
-    width: 30rem;
-    height: 30rem;
+    height: 100%;
     object-fit: cover;
     z-index: 1;
+    border-radius: inherit;
 }
 
-.about_img-con::before {
+.about_img-con::before{
     content: "";
   position: absolute;
-  inset: -3px;
-  z-index: 1;
+  inset: -.2rem;
+  z-index: -1;
   background: conic-gradient(
-    from 0deg,
-    #0ff 0%,
-    transparent 25%,
-    #0ff 50%,
-    transparent 75%,
-    #0ff 100%
+    from var(--gradient-angle),
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-5)
   );
-  background-size: 400% 400%;
-  border-radius: 20px;
-  filter: blur(10px);
-  animation: glowFlow 8s ease infinite;
+  animation: glowFlow 10s linear infinite;
+  border-radius: inherit;
+  filter: blur(3.5rem);
+  opacity: 0.7;
 }
 
 @keyframes glowFlow {
-  0% {
-    background-position: 0% 25%;
-  }
-  25% {
-    background-position: 50% 75%;
-  }
-  50% {
-    background-position: 100% 75%;
-  }
-  75% {
-    background-position: 50%  25%;
-  }
-  100% {
-    background-position: 0% 100%;
-  }
+    0% {
+       --gradient-angle: 0deg;
+    }
+
+    100% {
+       --gradient-angle: 360deg;
+    }
 }
+
 /*.about_img-con::after {
     position: absolute;
     content: '';
