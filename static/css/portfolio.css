@@ -1249,7 +1249,7 @@ footer {
 .tools_nav{
     display: flex;
     border: 1px solid rgb(24, 37, 37);
-    background: rgb(24, 37, 37);
+     border-radius: .5rem;
     box-shadow: 0 0 2px rgba(0, 255, 255, 0.2);
     width: 60%;
     margin: auto;
@@ -1263,7 +1263,7 @@ footer {
     background: var(--contact-submit-btn-bg);
     border: 1px solid var(--contact-submit-btn-bdr-color);
     color: var(--contact-submit-btn-text-color);
-    border-radius: .5rem;
+    border-radius: inherit;
     padding: .5rem 5rem;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -1307,7 +1307,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--mobile-nav-text-color);
     border-radius: .5rem;
 }
 
