@@ -1326,7 +1326,7 @@ footer {
 
 /** media queries **/
 
-@media (max-width:768px) {
+@media (max-width:770px) {
     .hambugger {
         position: fixed;
         display: flex;
@@ -1483,6 +1483,7 @@ footer {
     .tools_nav{
         width: 100%;
         margin-top: 1rem;
+        margin: auto;
     }
     .tools_btn{
         padding: .5rem;
