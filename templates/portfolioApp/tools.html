@@ -6,53 +6,23 @@
 <section class="tools_sec">
     <div class="tools_head">
         <h1>My tools</h1>
-        <p>Here are some of the tools I use in my projects.</p>
+        <div class="tools_nav" id="tools_nav">
+             <!-- Tool category buttons will be dynamically inserted here -->
+
+        </div>
     </div>
-    <div class="tools_wrapper">
-        <div class="tools_card">
-            <div class="svg_con">
-                <div class="dj_shape">
-                    <h1>dj</h1>
-                </div>
-            </div>
-            <h2>Django</h2>
-            <p>A high-level Python web framework that encourages rapid development.</p>
-        </div>
-        <div class="tools_card">
-            <div class="svg_con">
-                <svg class="python" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2l-40.1 0 0 47.4c0 36.8-31.2 67.8-66.8 67.8l-106.8 0c-29.2 0-53.4 25-53.4 54.3l0 101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3l0-40.7-106.7 0 0-13.6 160.2 0c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 444.7a20.4 20.4 0 1 1 0-40.7 20.4 20.4 0 1 1 0 40.7zM167.8 248.1l106.8 0c29.7 0 53.4-24.5 53.4-54.3l0-101.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8 .1-45.2 8-53.4 24.7-53.4 55.6l0 40.7 106.9 0 0 13.6-147 0c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2l36.7 0 0-48.8c0-35.3 30.5-66.4 66.8-66.4zM161.2 64.7a20.4 20.4 0 1 1 0 40.8 20.4 20.4 0 1 1 0-40.8z"/></svg>
-            </div>
-            <h2>python</h2>
-            <p>A versatile programming language used for various applications</p>
-        </div>
-        <div class="tools_card">
-            <div class="svg_con">
-                <svg class="javascript" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M96 96L96 544L544 544L544 96L96 96zM339.8 445.4C339.8 489 314.2 508.9 276.9 508.9C243.2 508.9 223.7 491.5 213.7 470.4L248 449.7C254.6 461.4 260.6 471.3 275.1 471.3C288.9 471.3 297.7 465.9 297.7 444.8L297.7 301.7L339.8 301.7L339.8 445.4zM439.4 508.9C400.3 508.9 375 490.3 362.7 465.9L397 446.1C406 460.8 417.8 471.7 438.5 471.7C455.9 471.7 467.1 463 467.1 450.9C467.1 436.5 455.7 431.4 436.4 422.9L425.9 418.4C395.5 405.5 375.4 389.2 375.4 354.9C375.4 323.3 399.5 299.3 437 299.3C463.8 299.3 483 308.6 496.8 333L464 354C456.8 341.1 449 336 436.9 336C424.6 336 416.8 343.8 416.8 354C416.8 366.6 424.6 371.7 442.7 379.6L453.2 384.1C489 399.4 509.1 415.1 509.1 450.3C509.1 488.1 479.3 508.9 439.4 508.9z"/></svg>
-            </div>
-            <h2>JavaScript</h2>
-            <p>A dynamic programming language commonly used for web development.</p>
-        </div>
+    <div class="tools_wrapper" id="tools_wrapper">
+        <!-- tools will be dynamically inserted here based on category -->
+
     </div>
 </section>
+
+
 
 {% endblock %}
 
 {% block extra_scripts %}
 
 <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-
-    <script>
-        ScrollReveal({
-            reset: true,
-            distance: '3rem',
-            duration: 1200,
-            easing: 'ease-in-out',
-            mobile: true,
-            cleanup: true,
-            viewFactor: 0.2,
-         })
-
-         ScrollReveal().reveal('.tools_card', { delay: 150, origin: '', interval: 150, scale: .3});
-    </script>
 
 {% endblock %}

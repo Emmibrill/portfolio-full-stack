@@ -296,7 +296,7 @@ footer {
     height: .5rem;
 }
 
-/* style anmation */
+/* style animation -- coded by Brill animation */
 
 .wrapper {
     display: flex;
@@ -552,12 +552,10 @@ footer {
     align-items: center;
     justify-content: center;
     color: var(--form-heading-color);
-    /*font-family: 'Comfortaa', cursive;*/
     padding: 1rem 0 2.5rem;
     font-weight: 600;
     letter-spacing: .5px;
     font-size: 1.4rem;
-    /*font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;*/
 }
 
 .form-section {
@@ -569,7 +567,6 @@ footer {
     justify-content: center;
     background: var(--form-section-bg);
     margin: 6rem 0 2rem;
-    /*font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;*/
 }
 
 .contact__form {
@@ -577,7 +574,6 @@ footer {
     max-width: 50rem;
     border-radius: 1rem;
     background: var(--contact-form-bg);
-    /*font-family: 'Comfortaa', cursive;*/
     display: block;
     padding: 1rem;
     margin: 1rem;
@@ -880,6 +876,7 @@ footer {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
 }
 
+
 /* style the about section */
 
 .about_section-one {
@@ -920,9 +917,6 @@ footer {
 .name_par {
     font-size: 3.1rem;
     color: rgb(234, 234, 234);
-    /*color: transparent;*/
-    /*-webkit-text-stroke: 5px rgb(234, 234, 234);*/
-    /*font-family: 'Comfortaa', cursive;*/
 }
 
 .about_img-con {
@@ -1010,6 +1004,7 @@ footer {
     color: var(--mobile-nav-text-color);
     padding: 1rem;
 }
+
 
 /* contact social */
 .social_con {
@@ -1184,7 +1179,7 @@ footer {
     border: 1px solid #0ff;
 }
 
-html.sr .service_con{
+.service_con{
     visibility: hidden;
 }
 
@@ -1235,7 +1230,6 @@ html.sr .service_con{
 
 /** style tools section **/
 
-
 .tools_sec{
    
     margin-top: 5rem;
@@ -1243,7 +1237,38 @@ html.sr .service_con{
     background: var(--form-section-bg);
     padding: 1rem;
     text-align: center;
+}
 
+.tools_nav{
+    display: flex;
+    border: 1px solid rgb(24, 37, 37);
+    background: rgb(24, 37, 37);
+    box-shadow: 0 0 2px rgba(0, 255, 255, 0.2);
+    width: 60%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding: 1rem;
+}
+.tools_btn{
+    width: 100%;
+    background: var(--contact-submit-btn-bg);
+    border: 1px solid var(--contact-submit-btn-bdr-color);
+    color: var(--contact-submit-btn-text-color);
+    border-radius: .5rem;
+    padding: .5rem 5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    color: var(--mobile-nav-text-color);
+    transition: all ease-in .5s;
+    font-weight: bold;
+}
+
+.tools_btn:hover{
+    background: var(--contact-submit-btn-hover-bg);
+    color: var(--contact-submit-btn-hover-text-color);
+    border: 1px solid var(--contact-submit-btn-hover-bg);
 }
 
 .tools_wrapper{
@@ -1268,23 +1293,7 @@ html.sr .service_con{
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
     box-shadow:0 .5rem 2rem  rgba(14, 13, 13, .5);
 }
-html.sr .tools_card{
-    visibility: hidden;
-}
 
-.dj_shape{
-    height: 2.1rem;
-    width: 2.1rem;
-    background: var(--mobile-nav-text-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.dj_shape h1{
-    font-size: 1.2rem;
-    color: var(--mobile-nav-bg);
-    font-weight: 700;
-}
 .tools_card .svg_con{
     width: 4rem;
     height: 4rem;
@@ -1302,7 +1311,14 @@ html.sr .tools_card{
     fill: var(--mobile-nav-text-color);
 }
 
+.tools_card{
+    visibility: hidden;
+}
 
+
+
+
+/** media queries **/
 
 @media (max-width:768px) {
     .hambugger {
@@ -1460,7 +1476,29 @@ html.sr .tools_card{
         height: 2rem;
     }
 
-}
+    /** style tools section **/
+
+    .tools_nav{
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .tools_btn{
+        padding: .5rem;
+    }
+
+    .tools_wrapper{
+        grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+    }
+
+    .tools_card h2{
+        font-size: 1rem;
+    }
+
+    .svg_con svg{
+
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 
 
 @media (max-width:540px) {
@@ -1574,6 +1612,7 @@ html.sr .tools_card{
         padding: .5rem;
     }
 
+    /* style services section */
     .service_con{
         padding: 1rem;
     }
@@ -1592,6 +1631,16 @@ html.sr .tools_card{
         font-size: .8rem;
     }
 
+
+    /** style tools section **/
+
+    .tools_wrapper{
+        grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
+    }
+
+    .tools_card h2{
+        font-size: .8rem;
+    }
 
     /* style footer */
 

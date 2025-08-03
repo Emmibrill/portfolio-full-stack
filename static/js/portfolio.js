@@ -3,8 +3,7 @@ const navList = document.querySelector(".lists");
 const navTabs = document.querySelectorAll(".list__tab");
 const navTabsPar = document.querySelectorAll(".list");
 const myServicesCon = document.querySelector(".all_services");
-const toolsContainer = document.querySelector(".tools_con");
-console.log(toolsContainer);
+const frontendToolsWrapper = document.querySelector("#frontend");
 
 //activates the navigation bar and controls the hambugger movement
 function activateNavbar() {
@@ -227,14 +226,10 @@ document.addEventListener("DOMContentLoaded", () => {
   formValidator();
 });
 
-//start a new line of coding here
-
 //display services
 
-
-function showServices(){
-
-  let myServices = '';
+function showServices() {
+  let myServices = "";
   let ser = [
     {
       serviceIcon: '<i class="fa-solid fa-mobile"></i>',
@@ -257,9 +252,9 @@ function showServices(){
                         when users request information or when website needs to relate 
                         to another part of the web architecture`,
     },
-  ]
+  ];
 
-  ser.forEach(s => {
+  ser.forEach((s) => {
     myServices += `
     <div class="service_con">
             <div class="icon_con">
@@ -274,23 +269,211 @@ function showServices(){
                 </p>
             </div>
                     
-        </div>`
-  })
+        </div>`;
+  });
   myServicesCon.innerHTML = myServices;
 }
-showServices();
 
-const activeService = document.querySelectorAll('.service_con')
-activeService.forEach(con => {
-  console.log(con)
-  con.addEventListener('click', () => {
-    activeService.forEach(con => {
-      con.classList.remove('active')
-      con.style.border = 'none'
-    })
-    con.classList.add('active')
-     con.style.border = '1px solid #0ff';
-  })
-})
+if (myServicesCon) {
+  showServices();
+}
 
+const activeService = document.querySelectorAll(".service_con");
+if (activeService) {
+  showActiveCard(activeService);
+}
 
+//show which card is active by adding a border arond the active card
+function showActiveCard(card) {
+  card.forEach((c) => {
+    c.addEventListener("click", () => {
+      card.forEach((c) => {
+        c.classList.remove("active");
+        c.style.border = "none";
+      });
+      c.classList.add("active");
+      c.style.border = "1px solid #0ff";
+    });
+  });
+}
+
+//dynamically filter tools based on category and display them on the page
+
+function filterTools() {
+  const toolsData = [
+    {
+      category: "frontend",
+      tools: [
+        {
+          toolIcon:
+            '<svg style="fill: rgb(227, 76, 38);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M128 96L162.9 491.8L319.5 544L477.1 491.8L512 96L128 96zM436.2 223.9L252.4 223.9L256.5 273.3L432.1 273.3L418.5 421.7L320.6 448.7L320.6 449L319.5 449L220.8 421.7L214.8 345.9L262.5 345.9L266 384L319.5 398.5L373.2 384L379.2 321.8L212.3 321.8L199.5 176.2L440.6 176.2L436.2 223.9z"/></svg>',
+          toolName: "html5",
+        },
+        {
+          toolIcon:
+            '<svg style="fill: rgb(38, 77, 228);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M544 96L480 464L256.7 544L64 464L83.6 369.2L165.6 369.2L157.6 409.8L274 454.2L408.1 409.8L426.9 312.7L93.5 312.7L109.5 230.7L443.2 230.7L453.7 178L120.3 178L136.6 96L544 96z"/></svg>',
+          toolName: "CSS3",
+        },
+        {
+          toolIcon:
+            '<svg style="fill: rgb(240, 219, 79);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M320 64L192 320H448L320 64zM320 576L192 320H448L320 576z"/></svg>',
+          toolName: "JavaScript",
+        },
+      ],
+    },
+    {
+      category: "backend",
+      tools: [
+        {
+          toolIcon:
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="100%" height="100%" fill="#092E20" rx="8" /><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle"font-size="160" font-family="Arial, sans-serif" fill="white" font-weight="bold">django</text></svg>',
+          toolName: "Django",
+        },
+        {
+          toolIcon:
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="100%" height="100%" fill="#092E20" rx="8" /><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="160" font-family="Arial, sans-serif" fill="white" font-weight="bold">Express</text></svg>',
+          toolName: "Express",
+        },
+        {
+          toolIcon:
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="100%" height="100%" fill="#092E20" rx="8" /><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="160" font-family="Arial, sans-serif" fill="white" font-weight="bold">MongoDB</text></svg>',
+          toolName: "MongoDB",
+        },
+      ],
+    },
+    {
+      category: "all",
+      tools: [
+        {
+          toolIcon:
+            '<svg style="fill: rgb(227, 76, 38);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M128 96L162.9 491.8L319.5 544L477.1 491.8L512 96L128 96zM436.2 223.9L252.4 223.9L256.5 273.3L432.1 273.3L418.5 421.7L320.6 448.7L320.6 449L319.5 449L220.8 421.7L214.8 345.9L262.5 345.9L266 384L319.5 398.5L373.2 384L379.2 321.8L212.3 321.8L199.5 176.2L440.6 176.2L436.2 223.9z"/></svg>',
+          toolName: "html5",
+        },
+        {
+          toolIcon:
+            '<svg style="fill: rgb(38, 77, 228);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M544 96L480 464L256.7 544L64 464L83.6 369.2L165.6 369.2L157.6 409.8L274 454.2L408.1 409.8L426.9 312.7L93.5 312.7L109.5 230.7L443.2 230.7L453.7 178L120.3 178L136.6 96L544 96z"/></svg>',
+          toolName: "CSS3",
+        },
+        {
+          toolIcon:
+            '<svg style="fill: rgb(240, 219, 79);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M320 64L192 320H448L320 64zM320 576L192 320H448L320 576z"/></svg>',
+          toolName: "JavaScript",
+        },
+        {
+          toolIcon:
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="100%" height="100%" fill="#092E20" rx="8" /><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle"font-size="160" font-family="Arial, sans-serif" fill="white" font-weight="bold">django</text></svg>',
+          toolName: "Django",
+        },
+        {
+          toolIcon:
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="100%" height="100%" fill="#092E20" rx="8" /><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="160" font-family="Arial, sans-serif" fill="white" font-weight="bold">Express</text></svg>',
+          toolName: "Express",
+        },
+        {
+          toolIcon:
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="100%" height="100%" fill="#092E20" rx="8" /><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="160" font-family="Arial, sans-serif" fill="white" font-weight="bold">MongoDB</text></svg>',
+          toolName: "MongoDB",
+        },
+      ],
+    },
+  ];
+
+  const toolsTabsData = [
+    {
+      category: "frontend",
+      buttonText: "Frontend",
+    },
+    {
+      category: "backend",
+      buttonText: "Backend",
+    },
+    {
+      category: "all",
+      buttonText: "All",
+    },
+  ];
+
+  // Default category
+  let activeCategory = "frontend";
+
+  const renderToolsGrid = () => {
+    const gridContainer = document.getElementById("tools_wrapper");
+
+    // Ensure gridContainer exists
+    if (!gridContainer) return;
+
+    // Clear previous content
+    gridContainer.innerHTML = "";
+    const filteredTools =
+      toolsData.filter((tool) => tool.category === activeCategory)[0]?.tools ||
+      [];
+
+    if (!filteredTools) {
+      console.error(`No tools found for category: ${activeCategory}`);
+      return;
+    }
+    filteredTools.forEach((tools) => {
+      const card = document.createElement("div");
+      card.className = "tools_card";
+      card.innerHTML = `
+        <div class="svg_con">
+          ${tools.toolIcon}
+        </div>
+        <h2>${tools.toolName}</h2>
+      `;
+      gridContainer.appendChild(card);
+      
+    });
+    ScrollReveal({
+      reset: true,
+      distance: "3rem",
+      duration: 1200,
+      easing: "ease-in",
+      mobile: true,
+      cleanup: true,
+      viewFactor: 0.2,
+    });
+
+    ScrollReveal().reveal(".tools_card", {
+      delay: 100,
+      origin: "bottom",
+      interval: 150,
+    });
+  };
+
+  const setUpToolTabs = () => {
+    const toolTabsContainer = document.getElementById("tools_nav");
+    if (!toolTabsContainer) return;
+
+    toolsTabsData.forEach((tab) => {
+      const tabButton = document.createElement("button");
+      tabButton.className = "tools_btn";
+      tabButton.dataset.tab = `${tab.category}`;
+      tabButton.textContent = `${tab.buttonText}`;
+      tabButton.dataset.tab === tab.category;
+      if (tab.category === activeCategory) {
+        tabButton.classList.add("active");
+      }
+      tabButton.addEventListener("click", () => {
+        activeCategory = tab.category;
+        document
+          .querySelectorAll(".tools_btn")
+          .forEach((btn) => btn.classList.remove("active"));
+        tabButton.classList.add("active");
+        renderToolsGrid();
+      });
+
+      toolTabsContainer.appendChild(tabButton);
+    });
+  };
+  setUpToolTabs();
+  renderToolsGrid();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  filterTools();
+});
+
+if (activeService) {
+  showActiveCard(activeService);
+}
