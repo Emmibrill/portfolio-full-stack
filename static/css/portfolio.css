@@ -957,7 +957,7 @@ footer {
 .about_img-con::before{
     content: "";
   position: absolute;
-  inset: -.2rem;
+  inset: -.1rem;
   z-index: -1;
   background: conic-gradient(
     from var(--gradient-angle),
@@ -1397,10 +1397,6 @@ footer {
 
     }
 
-    .about_img {
-        width: 100dvw;
-        height: 40rem;
-    }
 
     .about_name-con {
         position: relative;
@@ -1507,7 +1503,7 @@ footer {
         height: 2.5rem;
     }
 
-
+}
 @media (max-width:540px) {
 
     /* swiper */
@@ -1595,8 +1591,10 @@ footer {
     }
 
     /*about section*/
-    .about_img {
-        width: 100dvw;
+
+    
+    .about_img-con {
+        width: 25rem;
         height: 30rem;
         object-fit: cover;
     }
