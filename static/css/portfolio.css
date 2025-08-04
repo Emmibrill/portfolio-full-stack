@@ -1252,7 +1252,7 @@ footer {
 .tools_nav{
     display: flex;
     border: 1px solid rgb(24, 37, 37);
-    border-radius: .5rem;
+    border-radius: 1rem;
     box-shadow: 0 0 2px rgba(0, 255, 255, 0.2);
     width: 100%;
     align-items: center;
@@ -1681,6 +1681,9 @@ footer {
     }
 
     .tools_card h2{
+        font-size: .8rem;
+    }
+    .tools_btn{
         font-size: .8rem;
     }
 
