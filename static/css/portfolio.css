@@ -1304,7 +1304,7 @@ footer {
     inset -2px -3px 5px rgba(255, 255, 255, 0.6);
     border: none;
 }
-.tools_btn:hover {
+.tools_btn:hover, .active.tools_btn {
     background: linear-gradient(145deg, #b56e23, #a65e1a); /* Gradient hover */
     background: linear-gradient(145deg, #ff8c42, #e6731a);
     background: linear-gradient(145deg, #bbb049, #cc7431);
@@ -1688,6 +1688,7 @@ footer {
     }
     .tools_btn{
         font-size: .8rem;
+        border-radius: .6rem;
     }
 
     /* style footer */
