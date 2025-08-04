@@ -283,11 +283,18 @@ if (activeService) {
   showActiveCard(activeService);
 }
 
-//show which card is active by adding a border arond the active card
-function showActiveCard(card) {
-  card.forEach((c) => {
+function borderOnTool(){
+  const allService = document.querySelectorAll(".service_con");
+  console.log(allService)
+  if(!allService || allService.length === 0) return
+  allService[0].classList.add("active")
+}
+borderOnTool()
+
+function showActiveCard(cards) {
+  cards.forEach((c) => {
     c.addEventListener("click", () => {
-      card.forEach((c) => {
+      cards.forEach((c) => {
         c.classList.remove("active");
         c.style.border = "none";
       });
@@ -429,6 +436,10 @@ function filterTools() {
       gridContainer.appendChild(card);
       
     });
+
+    const toolCard = Array.from(gridContainer.children);
+    showActiveCard(toolCard)
+
     ScrollReveal({
       reset: true,
       distance: "3rem",
@@ -479,6 +490,5 @@ document.addEventListener("DOMContentLoaded", () => {
   filterTools();
 });
 
-if (activeService) {
-  showActiveCard(activeService);
-}
+
+//show which card is active by adding a border arond the active card
