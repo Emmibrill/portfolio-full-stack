@@ -1259,6 +1259,7 @@ footer {
     justify-content: space-around;
     gap: 1rem;
     padding: .6rem;
+    margin: 1rem;
 }
 .tools_btn{
     width: 100%;
@@ -1520,7 +1521,9 @@ footer {
     .tools_nav{
         width: 100%;
         margin-top: 1rem;
-        margin: auto;
+        margin-left: auto;
+        margin-left: auto;
+
     }
     .tools_btn{
         padding: .5rem;
