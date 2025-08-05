@@ -392,16 +392,16 @@ function filterTools() {
 
   const toolsTabsData = [
     {
+      category: "all",
+      buttonText: "All",
+    },
+    {
       category: "frontend",
       buttonText: "Frontend",
     },
     {
       category: "backend",
       buttonText: "Backend",
-    },
-    {
-      category: "all",
-      buttonText: "All",
     },
   ];
 
