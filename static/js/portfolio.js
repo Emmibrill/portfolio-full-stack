@@ -269,7 +269,8 @@ function showServices() {
                 </p>
             </div>
                     
-        </div>`;
+        </div>
+      `;
   });
   myServicesCon.innerHTML = myServices;
 }
@@ -283,13 +284,13 @@ if (activeService) {
   showActiveCard(activeService);
 }
 
-function borderOnTool(){
+function borderOnTool() {
   const allService = document.querySelectorAll(".service_con");
-  console.log(allService)
-  if(!allService || allService.length === 0) return
-  allService[0].classList.add("active")
+  console.log(allService);
+  if (!allService || allService.length === 0) return;
+  allService[0].classList.add("active");
 }
-borderOnTool()
+borderOnTool();
 
 function showActiveCard(cards) {
   cards.forEach((c) => {
@@ -406,7 +407,7 @@ function filterTools() {
   ];
 
   // Default category
-  let activeCategory = "frontend";
+  let activeCategory = "all";
 
   const renderToolsGrid = () => {
     const gridContainer = document.getElementById("tools_wrapper");
@@ -434,11 +435,10 @@ function filterTools() {
         <h2>${tools.toolName}</h2>
       `;
       gridContainer.appendChild(card);
-      
     });
 
     const toolCard = Array.from(gridContainer.children);
-    showActiveCard(toolCard)
+    showActiveCard(toolCard);
 
     ScrollReveal({
       reset: true,
@@ -489,6 +489,5 @@ function filterTools() {
 document.addEventListener("DOMContentLoaded", () => {
   filterTools();
 });
-
 
 //show which card is active by adding a border arond the active card

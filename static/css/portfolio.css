@@ -1172,6 +1172,7 @@ footer {
     gap: 1rem;
 }
 .service_con{
+    position: relative;
     background: var(--form-input-bg-color);
     border-radius: 1rem;
     padding: 2rem;
@@ -1183,10 +1184,8 @@ footer {
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    box-shadow: var(--neu-shadow-dark), var(--neu-shadow-light);
-     
+    box-shadow: var(--neu-shadow-dark), var(--neu-shadow-light); 
 }
-
 
 
 .service_con{
@@ -1194,7 +1193,7 @@ footer {
 }
 
 .service_con:hover{
-    transform:translateY(-5px);
+    transform:translateY(-7px);
     box-shadow:0 1rem 2rem  rgba(14, 13, 13, .5);
     border: 1px solid #0ff;
    
