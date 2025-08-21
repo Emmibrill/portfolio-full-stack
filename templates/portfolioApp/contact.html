@@ -3,12 +3,13 @@
  
 {% block contents %}
 <section class="form-section">
+    <h1 class="form_intro">Get In Touch</h1>
 
     <form action="{% url 'contact' %}" method="post" class="contact__form" id="contact" autocomplete="on" novalidate>
         {% csrf_token %}
 
         <div class="contact__header">
-            <h2 class="contact__title">Contact Me</h2>
+            <h2 class="contact__title">Email Me</h2>
         </div>
 
         <div class="contact__head">

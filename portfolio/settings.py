@@ -51,7 +51,6 @@ EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 
 # Contact email (for receiving messages from a contact form)
 CONTACT_EMAIL = env.str("CONTACT_EMAIL", default=EMAIL_HOST_USER)
-#print("📦 EMAIL_BACKEND in use:", EMAIL_BACKEND)
 
 
 from pathlib import Path
@@ -69,7 +68,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['127.0.0.1', 'localhost',])
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['127.0.0.1','localhost','10.175.171.206'])
 
 
 # Application definition

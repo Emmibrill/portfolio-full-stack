@@ -564,6 +564,10 @@ footer {
 
 /*contact section*/
 /*contact form*/
+.form_intro{
+    color: var(--mobile-nav-text-color);
+    font-size: 2.5rem;
+}
 
 .contact__title {
     display: flex;
@@ -1414,6 +1418,11 @@ footer {
     }
 
 
+    /*contact section*/
+    .form_intro{
+        font-size: 1.5rem;
+    }
+
     /*thank you page*/
     .icon_container .fa-check {
         color: var(--text-color);
@@ -1544,6 +1553,12 @@ footer {
 
 }
 @media (max-width:540px) {
+
+     /*contact section*/
+
+    .form_intro{
+        font-size: 2rem;
+    }
 
     /* swiper */
 
@@ -1731,6 +1746,15 @@ footer {
 }
 
 @media (max-width:425px) {
+
+     /*contact section*/
+
+    .form_intro{
+        font-size: 1.5rem;
+    }
+     .contact__title{
+        font-size: 1.3rem;
+    }
 
 
     /*portfolio dialogue box showing that there is no project*/
