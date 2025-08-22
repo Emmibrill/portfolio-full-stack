@@ -280,8 +280,8 @@ footer {
     width: 100%;
     background: rgb(13, 25, 38);
     border-top: 1px solid rgba(0, 255, 255, .2);
+    border: none;
     z-index: 2;
-
 }
 
 .footer_top {
@@ -591,6 +591,13 @@ footer {
     margin: 6rem 0 2rem;
 }
 
+.contact_container{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    padding: 1rem;
+}
+
 .contact__form {
     width: 80%;
     max-width: 50rem;
@@ -704,7 +711,7 @@ footer {
 
 .contact__head textarea {
     width: 100%;
-    height: 200px;
+    height: 110px;
     resize: none;
     padding: .8rem .9rem;
     background: var(--form-input-bg-color);
@@ -779,7 +786,12 @@ footer {
 .contact__label::after {
     right: 0;
 }
-
+.submitform>svg{
+    width: 100%;
+    height: 100%;
+    max-width: 1rem;
+    fill: var(--mobile-nav-text-color);
+}
 .submitform {
     display: block;
     right: 0;
@@ -791,10 +803,9 @@ footer {
     font-size: 1.2rem;
     font-weight: bold;
     border: 1px solid none;
-    background: var(--contact-submit-btn-bg);
     background: linear-gradient(135deg, var(--accent-alt), var(--accent-deep), var(--accent-bright));
-    border: 1px solid var(--contact-submit-btn-bdr-color);
-    color: var(--contact-submit-btn-text-color);
+    border: none;
+    color: var(--mobile-nav-text-color);
     letter-spacing: 1px;
     text-transform: capitalize;
     position: relative;
@@ -804,10 +815,81 @@ footer {
 .submitform:hover {
     background: rgb(255, 181, 102);
     color: rgb(13, 27, 42);
-    border: 1px solid rgb(255, 181, 102);
+    border: none;
+}
+.submitform:hover>svg{
+    fill: rgb(13, 27, 42);
 }
 
+.connect_details{
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
 
+.connect_heading{
+    
+    color: var(--mobile-nav-text-color);
+   
+}
+.connect_par{
+    color: var(--mobile-nav-text-color);
+    color: #9babb0;
+}
+.connect_box{
+    margin-top: 3rem;
+    cursor: pointer;
+}
+.connect_details h3{
+    color: var(--mobile-nav-text-color);
+    /* gradient background */
+    /*background: linear-gradient(90deg, #ff7e5f, #feb47b);*/
+}
+
+.connect_details p{
+    color: #9babb0;
+}
+.connect_details svg{
+    width: 100%;
+    height: auto;
+    max-width: 3rem;
+}
+.connect_details:nth-child(2) svg{
+    fill: rgb(59, 89, 152);
+}
+.connect_details:nth-child(1) svg{
+    fill: rgb(10, 208, 122);
+}
+
+.follow_me{
+    display: none;
+}
+
+.follow_me{
+    margin: 3rem 0 0;
+}
+.follow_me h3{
+    color: var(--mobile-nav-text-color);
+    padding: 0 0 1rem;
+}
+.follow_icon svg{
+    width: 100%;
+    height: 100%;
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+}
+
+.follow_icon > a:nth-child(1) svg{
+    fill: rgb(193, 53, 132);
+}
+
+.follow_icon > a:nth-child(2) svg{
+    fill: rgb(193, 53, 132);
+    fill: var(--mobile-nav-text-color);
+}
+.follow_icon > a:nth-child(3) svg{
+    fill:rgb(59, 89, 152);
+}
 
 /*thank you page*/
 
@@ -1419,6 +1501,15 @@ footer {
 
 
     /*contact section*/
+
+    .contact_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    }
+
     .form_intro{
         font-size: 1.5rem;
     }
@@ -1555,10 +1646,74 @@ footer {
 @media (max-width:540px) {
 
      /*contact section*/
+     .contact__form {
+        width: 100%;
+        padding: 2rem .5rem 1rem;
+        margin: 0rem;
+    }
+    .icon_details{
+        display: grid;
+        place-content: center;
+    }
+    .connect_heading{
+        font-size: 1.1rem;
+    }
+    .connect_par{
+        font-size: .8rem;
+    }
+    .connect_details h3{
+        font-size: .8rem;
+    }
+     .connect_details p{
+        font-size: .8rem;
+    }
+    .connect_details svg{
+        max-width: 3rem;
+    }
+
+    .follow_me{
+        display: block;
+    }
+    .follow_me{
+        margin: 3rem 0 0;
+    }
+    .follow_me h3{
+        padding: 0 0 1rem;
+        font-size: 1rem;
+    }
+    .follow_icon{
+        display: flex;
+        gap: 2rem;
+    }
+    .follow_icon svg{
+        max-width: 1.7rem;
+        max-height: 1.7rem;
+    }
+
+    .follow_icon > a:nth-child(1) svg{
+        fill: rgb(193, 53, 132);
+    }
+
+    .follow_icon > a:nth-child(2) svg{
+        fill: rgb(193, 53, 132);
+        fill: var(--mobile-nav-text-color);
+    }
+    .follow_icon > a:nth-child(3) svg{
+        fill:rgb(59, 89, 152);
+    }
 
     .form_intro{
         font-size: 2rem;
     }
+    .submitform {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .4rem;
+        font-size: 1rem;
+        letter-spacing: 0px;
+    }
+
 
     /* swiper */
 
@@ -1601,7 +1756,6 @@ footer {
         right: 0;
         width: 70%;
     }
-
 
     .btn {
         padding: 1.6rem 5rem;
@@ -1646,7 +1800,6 @@ footer {
 
     /*about section*/
 
-    
     .about_img-con {
         width: 25rem;
         height: 30rem;
@@ -1715,6 +1868,9 @@ footer {
 
     .footer_top h1 {
         font: 2rem;
+    }
+    .name_socials{
+        display: none;
     }
 
     .footer_socials .social {
