@@ -203,6 +203,8 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': env('CLOUDINARY_API_SECRET'),
 }
 
+MEDIA_URL = '/media/'
+
 
 # CSRF trusted origins for production
 # Add your production domain here, e.g., "https://yourdomain.com"
