@@ -206,8 +206,6 @@ CLOUDINARY_STORAGE = {
 }
 print("Cloud Name:", env("CLOUDINARY_CLOUD_NAME"))
 
-"C:\Users\DELL\Desktop\_JI_4115 e.jpg"
-
 
 # CSRF trusted origins for production
 # Add your production domain here, e.g., "https://yourdomain.com"
