@@ -1,2 +1,2 @@
 web: gunicorn portfolio.wsgi
-release: python manage.py migrate && python manage.py createsuperuser --noinput
+release: release: python manage.py migrate
