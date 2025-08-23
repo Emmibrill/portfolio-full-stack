@@ -1,11 +1,13 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
 class Projects(models.Model):
     title = models.CharField(max_length=200, blank=False, null=False, unique=True)  
     description = models.TextField(blank=False, null=False)
-    image = models.ImageField(upload_to='projects/', blank=False, null=False)
+    image = CloudinaryField('image')
+    #image = models.ImageField(upload_to='projects/', blank=False, null=False)
     technologies = models.ManyToManyField('Technology', blank=False)
     link = models.URLField(blank=False, null=False, default="https://example.com")
 

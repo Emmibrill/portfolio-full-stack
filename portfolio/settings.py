@@ -202,7 +202,9 @@ CLOUDINARY_STORAGE = {
     'API_KEY': env('CLOUDINARY_API_KEY'),
     'API_SECRET': env('CLOUDINARY_API_SECRET'),
 }
+print("Cloud Name:", env("CLOUDINARY_CLOUD_NAME"))
 
+"C:\Users\DELL\Desktop\_JI_4115 e.jpg"
 
 
 # CSRF trusted origins for production
