@@ -74,16 +74,16 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['127.0.0.1','localhost','10.1
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary_storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
     'portfolioApp',  #portfolio app
     'portfolioAPI',  #portfolio API
-    'cloudinary_storage',
-    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -191,7 +191,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-from cloudinary_storage.storage import RawMediaCloudinaryStorage
 from cloudinary_storage.storage import MediaCloudinaryStorage
 
 
