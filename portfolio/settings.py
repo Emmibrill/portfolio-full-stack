@@ -191,6 +191,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from cloudinary_storage.storage import RawMediaCloudinaryStorage
 from cloudinary_storage.storage import MediaCloudinaryStorage
 
 
@@ -203,7 +204,6 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': env('CLOUDINARY_API_SECRET'),
 }
 
-MEDIA_URL = '/media/'
 
 
 # CSRF trusted origins for production
