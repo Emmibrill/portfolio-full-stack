@@ -53,7 +53,7 @@
     --no-project-dialogue-box-icon-color: rgb(0, 183, 194);
     --dialogue-box-btn-bg: rgb(0, 183, 194);
     --dialogue-box-btn-text-color: rgb(13, 27, 42);
-    --dialogue-box-btn-hover-bg: rgb(255, 181, 102);
+    --dialogue-box-btn-hover-bg: linear-gradient(to right,rgb(255, 181, 102), rgb(255, 220, 130));
     --dialogue-box-btn-hover-text-color: rgb(13, 27, 42);
     --form-heading-color: rgb(234, 234, 234);
     --form-section-bg: rgb(13, 27, 42);
@@ -278,6 +278,8 @@ body {
 /* style the footer section*/
 footer {
     width: 100%;
+    box-shadow: 0;
+    left: 0;
     background: rgb(13, 25, 38);
     border-top: 1px solid rgba(0, 255, 255, .2);
     border: none;
@@ -396,6 +398,25 @@ footer {
     align-items: center;
 }
 
+
+/*home section*/
+
+.home_section{
+    position: relative;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+.wrk_in_progress{
+    display: grid;
+    place-items: center;
+    color: var(--mobile-nav-text-color);
+    padding: 1rem;
+    text-align: center;
+    gap: 2rem;
+}
+
+
 /* style the display no project message dialogue box*/
 
 .project-dialogue-box {
@@ -453,18 +474,19 @@ footer {
     right: 1rem;
     border-radius: .5rem;
     padding: .7rem 2rem;
-    background: var(--dialogue-box-btn-bg);
-    border: 1px solid var(--dialogue-box-btn-bg);
+    /*background: var(--dialogue-box-btn-bg);*/
+    background: linear-gradient(to right, rgb(8, 182, 213), rgb(166, 86, 246));
+    border: none;
     color: var(--dialogue-box-btn-text-color);
     font-weight: bold;
-    transition: all ease-in .4s;
     cursor: pointer;
+    transition: all ease-in .4s;
 }
 
 .dialogue-box-btn:hover {
     background: var(--dialogue-box-btn-hover-bg);
     color: var(--dialogue-box-btn-hover-text-color);
-    border: 1px solid var(--dialogue-box-btn-hover-bg);
+    border: none;
 }
 
 
@@ -472,9 +494,8 @@ footer {
 /*portfolio section*/
 
 .portfolio__section {
-    height: 100dvh;
+    height: 100%;
     background: rgb(0 0 0 / .85);
-
 }
 
 .portfolio__con {
@@ -488,22 +509,23 @@ footer {
     text-align: center;
     padding: 7rem 0 2rem;
     text-transform: capitalize;
-    color: var(--text-color);
-    text-decoration: overline var(--nav-active2) double 2px;
+    color: var(--mobile-nav-text-color);
 }
 
 .portfolio {
-    background: rgb(0 0 0);
-    border: 1px solid var(--nav-active2);
+    background: rgba(18, 23, 28, .3);
+    border: 1px solid var(--form-input-bdr-color);
+    box-shadow: var(--neu-shadow-dark), var(--neu-shadow-light);
     border-radius: 1rem;
 }
 
 .port-image__con {
     position: relative;
-    height: 20rem;
-    border-radius: 1rem;
+    height: 15rem;
+    border-radius: inherit;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    border-bottom: 1px solid var(--form-input-bdr-color);
 }
 
 .port__image {
@@ -511,7 +533,7 @@ footer {
     inset: 0;
     width: 100%;
     height: 100%;
-    border-radius: 1rem;
+    border-radius: inherit;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     object-fit: cover;
@@ -519,8 +541,7 @@ footer {
 
 .portfolio__name {
     margin: 1rem;
-    padding: .5rem 0;
-    color: var(--nav-active2);
+    color: var(--mobile-nav-text-color);
 }
 
 .portfolio__des {
@@ -529,36 +550,52 @@ footer {
 
 .port__par {
     color: rgb(255 255 255 / .8);
-    padding: 0 1rem;
+    /*color: #9babb0;*/
+    padding: 0.1rem 1rem;
     width: 100%;
 }
 
-.btn__con {
+.tool__con{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem 0;
+    height: auto;
+}
+.tool{
+    display: grid;
+    place-items: center;
+    color: var(--mobile-nav-text-color);
+    color: rgb(8, 182, 213);
+    border: none;
+    background: rgba(87, 82, 82, 0.5);
+    border-radius: .6rem;
+    height: 2rem;
+    width: 8rem;
     text-align: center;
-    margin: 2rem 0 1rem;
 }
 
-.btn__view {
-    position: relative;
-    border: 1px solid var(--nav-active2);
-    padding: 1.2rem 5rem;
-    background: transparent;
+.view__link{
+   display: grid;
+   place-items: center;
+   padding: .5rem;
+   margin: 1rem 0;
+}
+.btn__view{
+    /*background: linear-gradient(135deg, var(--accent-alt), var(--accent-deep), var(--accent-bright));*/
+    background: linear-gradient(to right, rgb(8, 182, 213), rgb(166, 86, 246));
+    border: none;
+    width: 96%;
+    padding: .7rem;
+    border-radius:  .8rem;
+    text-align: center;
+    color: var(--mobile-nav-text-color);
 }
 
-.btn__view a {
-    position: absolute;
-    display: flex;
-    gap: .5rem;
-    align-items: center;
-    justify-content: center;
-    inset: 0;
-    color: var(--text-color);
-}
 
-.btn__view a i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.btn__view i {
+    padding-right: .6rem;
+    color: var(--mobile-nav-text-color);
 }
 
 
@@ -803,7 +840,8 @@ footer {
     font-size: 1.2rem;
     font-weight: bold;
     border: 1px solid none;
-    background: linear-gradient(135deg, var(--accent-alt), var(--accent-deep), var(--accent-bright));
+    /*background: linear-gradient(135deg, var(--accent-alt), var(--accent-deep), var(--accent-bright));*/
+    background: linear-gradient(to right, rgb(8, 182, 213), rgb(166, 86, 246));
     border: none;
     color: var(--mobile-nav-text-color);
     letter-spacing: 1px;
@@ -813,7 +851,7 @@ footer {
 }
 
 .submitform:hover {
-    background: rgb(255, 181, 102);
+    background: var(--dialogue-box-btn-hover-bg);
     color: rgb(13, 27, 42);
     border: none;
 }
@@ -931,7 +969,7 @@ footer {
     position: relative;
     width: 6rem;
     height: 6rem;
-    background-color: rgb(255, 215, 0);
+    background: rgb(255, 215, 0);
     border-radius: 50%;
     margin-bottom: 3rem;
     display: flex;
@@ -966,9 +1004,9 @@ footer {
     padding: .8rem 5rem;
     font-size: 1rem;
     font-weight: bold;
-    border: 1px solid rgb(0, 122, 110);
+    border: none;
     border-radius: 1rem;
-    background-color: rgb(0, 150, 136);
+    background: linear-gradient(to right,rgb(0, 150, 136), rgb(77, 182, 172));
     color: rgb(255, 255, 255);
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
     text-transform: capitalize;
@@ -977,9 +1015,8 @@ footer {
 }
 
 .redirectButton:hover {
-    background-color: rgb(0, 122, 110);
-    color: rgb(255, 255, 255);
-    border: 1px solid rgb(0, 100, 90);
+    background: var(--dialogue-box-btn-hover-bg);
+    color: rgb(13, 27, 42);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
 }
 
@@ -1034,6 +1071,7 @@ footer {
     width: 30rem;
     height: 30rem;
     background: rgb(28, 47, 66);
+    background: rgb(0 0 0 / .9);
     box-shadow: 0 8px 16px rgba(0, 0, 0, .4);
     display: flex;
     align-items: center;
@@ -1370,7 +1408,8 @@ footer {
     padding: 1rem 2.5rem;
     font-size: 1rem;
     background: var(--contact-submit-btn-bg);
-     background: linear-gradient(135deg, var(--accent-alt), var(--accent-deep), var(--accent-bright));
+    /*background: linear-gradient(135deg, var(--accent-alt), var(--accent-deep), var(--accent-bright));*/
+    background: linear-gradient(to right, rgb(8, 182, 213), rgb(166, 86, 246));
     color: var(--contact-submit-btn-text-color); 
     border: none;
     border-radius: 15px;
@@ -1390,12 +1429,11 @@ footer {
     border: none;
 }
 .tools_btn:hover, .active.tools_btn {
-    background: linear-gradient(145deg, #b56e23, #a65e1a); /* Gradient hover */
-    background: linear-gradient(145deg, #ff8c42, #e6731a);
     background: linear-gradient(145deg, #bbb049, #cc7431);
     color: var(--contact-submit-btn-text-color); 
     box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4), inset -4px -4px 8px rgba(255, 255, 255, 0.03);
     transform: translateY(1px);
+    transform: scale(0.97);
 }
 
 
@@ -1645,6 +1683,11 @@ footer {
 }
 @media (max-width:540px) {
 
+    /*portfolio section*/
+    .port-image__con{
+        height: 13rem;
+    }
+
      /*contact section*/
      .contact__form {
         width: 100%;
@@ -1733,6 +1776,7 @@ footer {
     width: 100%;
     }
 
+    /*nav*/
     .nav__tab {
         padding: 0rem 1rem;
     }

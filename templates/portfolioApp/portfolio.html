@@ -24,22 +24,20 @@
                     </p>
                 </article>
                 <div class="tool__con">
-                    <!--<h2 class="tool__title">tools used</h2>-->
-                    <div class="tools"> 
-                        {% if project.technologies %}
-                        {% for tech in project.technologies.all %}
-
-                        <div class="eachTool">{{tech.technology}}</div>
-
-                        {% endfor %}
-                        {% endif %}
-                    </div>
-                </div>
-
-                <div class="btn__con">
-                    <button class="btn__view"><a href="{{project.link}}"><i class="fa-solid fa-bullseye"></i>Go live</a></button>
-                </div>
                 
+                    {% if project.technologies %}
+                    {% for tech in project.technologies.all %}
+
+                    <div class="tool">{{tech.technology}}</div>
+
+                    {% endfor %}
+                    {% endif %}
+                  
+                </div>
+
+                <div class="view__link">
+                    <a class="btn__view" href="{{project.link}}"><i class="fa-solid fa-bullseye"></i>Go live</a>
+                </div>
             </div>
             {% endfor %}
             {% else %}
