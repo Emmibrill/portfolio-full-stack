@@ -65,12 +65,16 @@
             </div>
             <div class="links">
                 <ul>
-                    <li><a href="{% url 'home' %}">home</a></li>
-                    <li><a href="{% url 'about-me' %}">about</a></li>
-                    <li><a href="{% url 'projects' %}">portfolio</a></li>
-                    <li><a href="{% url 'contact' %}">contact</a></li>
-                    <li><a href="{% url 'my-service' %}">services</a></li>
-                    <li><a href="{% url 'my-tools' %}">tools</a></li>
+                    <div class="first_footer">
+                        <li><a href="{% url 'home' %}">home</a></li>
+                        <li><a href="{% url 'about-me' %}">about</a></li>
+                        <li><a href="{% url 'projects' %}">portfolio</a></li>
+                    </div>
+                    <div class="second_footer">
+                        <li><a href="{% url 'contact' %}">contact</a></li>
+                        <li><a href="{% url 'my-service' %}">services</a></li>
+                        <li><a href="{% url 'my-tools' %}">tools</a></li>
+                    </div>
                 </ul>
             </div>
         </div>

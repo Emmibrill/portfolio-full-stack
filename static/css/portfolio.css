@@ -403,7 +403,7 @@ footer {
 
 .home_section{
     position: relative;
-    height: 100%;
+    height: calc(100% - 17rem);
     display: grid;
     place-items: center;
 }
@@ -1620,6 +1620,7 @@ footer {
     }
 
     /* style footer */
+
 
     .footer_top {
         flex-direction: column;
