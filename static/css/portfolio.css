@@ -402,11 +402,32 @@ footer {
 /*home section*/
 
 .home_section{
-    position: relative;
-    height: calc(100% - 17rem);
     display: grid;
     place-items: center;
+    padding-top: 4rem;
 }
+.home_card{
+    display: grid;
+    grid-template-columns: 2rem 10rem 2rem;
+    grid-template-rows: repeat(3, auto);
+    background: #9babb0;
+    padding: 3rem;
+}
+.welcome_card{
+    background: #0088a9;
+    grid-column: 1/-1;
+    grid-row: 1/3;
+
+    display: grid;
+    grid-template-rows: subgrid;
+}
+.explore_card{
+    background: #00cccc;
+    grid-column: 2/3;
+    grid-row: 2/4;
+  
+}
+/*
 .wrk_in_progress{
     display: grid;
     place-items: center;
@@ -415,7 +436,7 @@ footer {
     text-align: center;
     gap: 2rem;
 }
-
+*/
 
 /* style the display no project message dialogue box*/
 
