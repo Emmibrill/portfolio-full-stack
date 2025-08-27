@@ -6,6 +6,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.http import HttpResponseServerError
 from django.http import HttpResponse
+from django.core.mail import EmailMessage
 
 # Create your views here.
 
@@ -53,13 +54,14 @@ def contact(request):
             print("Body:\n", message_content)
 
             try:
-                send_mail(
+                email_message = EmailMessage(
                     subject,
                     message_content,
-                    settings.DEFAULT_FROM_EMAIL, 
-                    [settings.CONTACT_EMAIL],
+                    from_email=settings.DEFAULT_FROM_EMAIL, 
+                    to=[settings.CONTACT_EMAIL],
                     reply_to=[email],  
                 )
+                email_message.send(fail_silently=False)
                 print("Email sent successfully")
             except Exception as e:
                 print("Email sending failed:", e)
