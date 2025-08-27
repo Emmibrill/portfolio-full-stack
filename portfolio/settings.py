@@ -26,6 +26,7 @@ env = environ.Env(
     DATABASE_URL=(str, ''),  # Default to empty string, must be set in .env
     EMAIL_BACKEND=(str, 'django.core.mail.backends.console.EmailBackend'),  # Default to console backend for development
     EMAIL_HOST=(str, 'localhost'),  # Default to localhost for development
+    SENDGRID_API_KEY=(str, ''),
 )
 environ.Env.read_env(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
 
@@ -42,7 +43,7 @@ CSRF_COOKIE_SECURE = True
 
 
 # Email Config (Development mode using local SMTP server or console backend)
-EMAIL_BACKEND = env('EMAIL_BACKEND')
+EMAIL_BACKEND = env("EMAIL_BACKEND")
 EMAIL_HOST = env.str("EMAIL_HOST")
 EMAIL_PORT = env.int("EMAIL_PORT")
 EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS", default=False)
@@ -51,6 +52,9 @@ EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 
 # Contact email (for receiving messages from a contact form)
 CONTACT_EMAIL = env.str("CONTACT_EMAIL", default=EMAIL_HOST_USER)
+
+#Email config (production mode using sendgrid)
+SENDGRID_API_KEY = env('SENDGRID_API_KEY')
 
 
 from pathlib import Path
