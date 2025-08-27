@@ -56,8 +56,9 @@ def contact(request):
                 send_mail(
                     subject,
                     message_content,
-                    email,
+                    settings.DEFAULT_FROM_EMAIL, 
                     [settings.CONTACT_EMAIL],
+                    reply_to=[email],  
                 )
                 print("Email sent successfully")
             except Exception as e:
