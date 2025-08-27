@@ -53,6 +53,9 @@ EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 # Contact email (for receiving messages from a contact form)
 CONTACT_EMAIL = env.str("CONTACT_EMAIL", default=EMAIL_HOST_USER)
 
+# contact email (for sending message from a contact form)
+DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default=EMAIL_HOST_USER)
+
 #Email config (production mode using sendgrid)
 SENDGRID_API_KEY = env('SENDGRID_API_KEY')
 
