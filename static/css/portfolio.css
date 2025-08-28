@@ -2122,6 +2122,32 @@ footer {
 
 @media (max-width:425px) {
 
+     /*home section*/
+
+    .home_section{
+        padding: 5rem .5rem;
+    }
+    .home_card{
+        display: grid;
+        grid-template-columns: 2rem auto 2rem;
+    }
+    .home_img{
+        height: 7rem;
+        width: 7rem;
+    }
+    .explore_card{
+        padding: 0rem .2rem 2rem;
+    }
+    .explore_card p:nth-child(5){
+        width: 70%;
+        margin: auto;
+    }
+
+    .home_intro-btn{
+        margin-top: 1.2rem;
+        padding: .7rem 4rem;
+    }
+
      /*contact section*/
 
     .form_intro{
