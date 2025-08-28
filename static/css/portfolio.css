@@ -2132,8 +2132,8 @@ footer {
         grid-template-columns: 2rem auto 2rem;
     }
     .home_img{
-        height: 7rem;
-        width: 7rem;
+        height: 10rem;
+        width: 10rem;
     }
     .explore_card{
         padding: 0rem .2rem 2rem;
