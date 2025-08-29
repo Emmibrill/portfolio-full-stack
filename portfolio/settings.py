@@ -265,6 +265,7 @@ CLOUDINARY_STORAGE = {
 # Add your production domain here, e.g., "https://yourdomain.com"
 CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[
     "https://emmibrill.up.railway.app",
+    "https://portfolio-full-stack-50mj.onrender.com",
 ])
 
 
