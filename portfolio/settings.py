@@ -38,8 +38,9 @@ DEBUG = env.bool("DEBUG", default=(ENVIRONMENT == "development"))
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = env.bool("CSRF_COOKIE_SECURE", default=not DEBUG)
+SESSION_COOKIE_SECURE = env.bool("SESSION_COOKIE_SECURE", default=not DEBUG)
+
 
 
 # Email Config (Development mode using local SMTP server or console backend)
@@ -216,7 +217,7 @@ CLOUDINARY_STORAGE = {
 # CSRF trusted origins for production
 # Add your production domain here, e.g., "https://yourdomain.com"
 CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[
-    "https://portfolio-full-stack-production.up.railway.app",
+    "https://emmibrill.up.railway.app",
 ])
 
 

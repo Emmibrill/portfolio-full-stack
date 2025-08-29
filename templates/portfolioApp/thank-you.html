@@ -12,7 +12,8 @@
     <div class="thankYouContainer">
         <div class="thankYou">
             <div class="icon_container">
-                <i class="fa-solid fa-check"></i>
+                <!-- <i class="fa-solid fa-check"></i> -->
+                <canvas id="thank-you_sent"></canvas>
             </div>
             <div class="thank_you-par">
                 <p>thank you <span class="visitors_name">{{name}}</span> for reaching out!</p>
@@ -30,5 +31,17 @@
         </div>
     
     </div>
+
+    <script type="module">
+      import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
+
+      new DotLottie({
+        autoplay: true,
+        loop: true,
+        canvas: document.getElementById("thank-you_sent"),
+        src: "https://lottie.host/13e55982-04b6-4e5e-bfac-889fefc41ddc/hFqf5twg5h.lottie", // or .json file
+      });
+</script>
+    
 </body>
 </html>

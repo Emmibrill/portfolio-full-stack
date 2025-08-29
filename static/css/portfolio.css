@@ -1086,15 +1086,18 @@ footer {
     background: rgb(255, 215, 0);
     border-radius: 50%;
     margin-bottom: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+ #thank-you_sent{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
 }
 
-.icon_container .fa-check {
+/* .icon_container .fa-check {
     color: rgb(18, 18, 18);
     font-size: 4.5rem;
-}
+} */
 
 .thank_you-par {
     width: 100%;
@@ -1198,7 +1201,7 @@ footer {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     z-index: 1;
     border-radius: inherit;
 }
@@ -2028,14 +2031,15 @@ footer {
     }
 
     .icon_container {
+        position: relative;
         width: 5rem;
         height: 5rem;
     }
 
-    .icon_container .fa-check {
+    /* .icon_container .fa-check {
         color: var(--text-color);
         font-size: 3.5rem;
-    }
+    } */
 
     .thank_you-par {
         font-size: .9rem;
@@ -2052,6 +2056,11 @@ footer {
         width: 25rem;
         height: 30rem;
         object-fit: cover;
+    }
+
+    .about_img-con>*{
+        width: 70%;
+        height: 70%;
     }
 
     .about_rht-wrp {
