@@ -31,10 +31,10 @@
                     <div class="nav__list">
                         <ul class="lists">
                             <li class="list"><a class="list__tab" href="{% url 'home' %}">home</a></li>
-                            <li class="list"><a class="list__tab" href="{% url 'my-service' %}">my services</a></li>
-                            <li class="list"><a class="list__tab" href="{% url 'my-tools' %}">tools</a></li>
-                            <li class="list"><a class="list__tab" href="{% url 'projects' %}">portfolio</a></li>
                             <li class="list"><a class="list__tab" href="{% url 'about-me' %}">about</a></li>
+                            <li class="list"><a class="list__tab" href="{% url 'my-service' %}">services</a></li>
+                            <li class="list"><a class="list__tab" href="{% url 'projects' %}">portfolio</a></li>
+                            <li class="list"><a class="list__tab" href="{% url 'my-tools' %}">tools</a></li>
                             <li class="list"><a class="list__tab" href="{% url 'contact' %}">contact</a></li>
                         </ul>
                     </div>
@@ -65,16 +65,12 @@
             </div>
             <div class="links">
                 <ul>
-                    <div class="first_footer">
-                        <li><a href="{% url 'home' %}">home</a></li>
-                        <li><a href="{% url 'about-me' %}">about</a></li>
-                        <li><a href="{% url 'projects' %}">portfolio</a></li>
-                    </div>
-                    <div class="second_footer">
-                        <li><a href="{% url 'contact' %}">contact</a></li>
-                        <li><a href="{% url 'my-service' %}">services</a></li>
-                        <li><a href="{% url 'my-tools' %}">tools</a></li>
-                    </div>
+                    <li><a href="{% url 'home' %}">home</a></li>
+                    <li><a href="{% url 'about-me' %}">about</a></li>
+                    <!-- <li><a href="{% url 'my-service' %}">services</a></li> -->
+                    <li><a href="{% url 'projects' %}">portfolio</a></li>
+                    <!-- <li><a href="{% url 'my-tools' %}">tools</a></li> -->
+                    <li><a href="{% url 'contact' %}">contact</a></li>
                 </ul>
             </div>
         </div>
