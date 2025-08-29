@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 import environ  # Import environ package
 import os
+import dj_database_url
 
 
 
@@ -26,6 +27,12 @@ env = environ.Env(
     DATABASE_URL=(str, ''),  # Default to empty string, must be set in .env
     EMAIL_BACKEND=(str, 'django.core.mail.backends.console.EmailBackend'),  # Default to console backend for development
     EMAIL_HOST=(str, 'localhost'),  # Default to localhost for development
+    EMAIL_PORT=(int, 587),
+    EMAIL_USE_TLS=(bool, True),
+    EMAIL_HOST_USER=(str, ""),
+    EMAIL_HOST_PASSWORD=(str, ""),
+    CONTACT_EMAIL=(str, ""),
+    DEFAULT_FROM_EMAIL=(str, ""),
     SENDGRID_API_KEY=(str, ''),
 )
 environ.Env.read_env(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
@@ -136,27 +143,67 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 # Database configuration
 
-USE_RAILWAY_DB = env.bool("USE_RAILWAY_DB", default=bool(os.environ.get("RAILWAY_ENVIRONMENT")))
 
 
-if USE_RAILWAY_DB:
+# Detect environments
+DEBUG = os.getenv("DEBUG", "True") == "True"
+ON_RAILWAY = "RAILWAY_ENVIRONMENT" in os.environ
+ON_RENDER = "RENDER" in os.environ
+
+if ENVIRONMENT == "development" and not ON_RENDER:
+    # Local development (SQLite)
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': env('PGDATABASE'),
-            'USER': env('PGUSER'),
-            'PASSWORD': env('PGPASSWORD'),
-            'HOST': env('PGHOST'),
-            'PORT': env('PGPORT'),
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
         }
     }
+
+elif ENVIRONMENT == "production" and ON_RAILWAY:
+    # Railway Postgres (env vars are injected automatically)
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.getenv("PGDATABASE"),
+            "USER": os.getenv("PGUSER"),
+            "PASSWORD": os.getenv("PGPASSWORD"),
+            "HOST": os.getenv("PGHOST"),
+            "PORT": os.getenv("PGPORT"),
+        }
+    }
+
+elif ENVIRONMENT == "production" and ON_RENDER:
+    # Render Postgres (DATABASE_URL is injected automatically)
+    DATABASES = {
+        "default": dj_database_url.config(
+            conn_max_age=600,
+            ssl_require=True,
+        )
+    }
+
 else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / "db.sqlite3",
-        }
-    }
+    raise Exception(f"Unknown ENVIRONMENT: {ENVIRONMENT}")
+
+# if USE_RAILWAY_DB:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': env('PGDATABASE'),
+#             'USER': env('PGUSER'),
+#             'PASSWORD': env('PGPASSWORD'),
+#             'HOST': env('PGHOST'),
+#             'PORT': env('PGPORT'),
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / "db.sqlite3",
+#         }
+#     }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
